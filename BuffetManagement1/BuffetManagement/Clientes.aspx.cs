@@ -29,7 +29,7 @@ namespace BuffetManagement
 
         protected void btnPesquisaCliente_Click(object sender, EventArgs e)
         {
-            var clientes = new Negócio.Cliente().Read(txtNomeCliente.Text);
+            var clientes = new Negócio.Cliente().Read(txtNomeCliente.Text, txtCPFCliente.Text, txtTelefoneCliente.Text);
             Session["dados"] = clientes;
             grdClientes.DataSource = clientes;
             grdClientes.DataBind();
