@@ -33,7 +33,7 @@ namespace BuffetManagement.Negócio
             return true;
         }
 
-        public List<Modelo.Cliente> Read(string nome)
+        public List<Modelo.Cliente> Read(string nome, string cpf, string telefone)
         {
             var clientes = new List<Modelo.Cliente>();
             try
@@ -45,11 +45,25 @@ namespace BuffetManagement.Negócio
                     comando.CommandText += $"and nome LIKE @nome";
                     comando.Parameters.Add(new MySqlParameter("nome", $"%{nome}%"));
                 }
+                
+                if (cpf.Equals("") == false)
+                {
+                    comando.CommandText += $"and cpf = @cpf";
+                    comando.Parameters.Add(new MySqlParameter("cpf",cpf));
+                }
+
+                if (telefone.Equals("") == false)
+                {
+                    comando.CommandText += $"and telefone = @telefone";
+                    comando.Parameters.Add(new MySqlParameter("telefone", telefone));
+                }
                 var reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
                     var cliente = new Modelo.Cliente();
                     cliente.Nome = reader.GetString("nome");
+                    cliente.Cpf = reader.GetString("cpf");
+                    cliente.Telefone = reader.GetString("telefone");
                     cliente.Id = reader.GetInt32("id");
                     clientes.Add(cliente);
                 }

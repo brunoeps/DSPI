@@ -133,6 +133,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Editar\EditarCliente.aspx" />
     <Content Include="Financeiro.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Pedidos.aspx" />
@@ -192,6 +193,13 @@
       <DependentUpon>Clientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Editar\EditarCliente.aspx.cs">
+      <DependentUpon>EditarCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editar\EditarCliente.aspx.designer.cs">
+      <DependentUpon>EditarCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Financeiro.aspx.cs">
       <DependentUpon>Financeiro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
