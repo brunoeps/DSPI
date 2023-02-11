@@ -51,7 +51,7 @@ namespace BuffetManagement
 
             if (e.CommandName == "editar")
             {
-                Response.Redirect("EditarCliente.aspx?id=" + clientes[index].Id);
+                Response.Redirect("Editar/EditarCliente.aspx?id=" + clientes[index].Id);
             }
         }
 
