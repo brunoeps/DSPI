@@ -33,7 +33,7 @@ namespace BuffetManagement.Negócio
             return true;
         }
 
-        public List<Modelo.Cliente> Read(string nome, string cpf, string telefone)
+        public List<Modelo.Cliente> Read(string nome, string cpf, string telefone, int id)
         {
             var clientes = new List<Modelo.Cliente>();
             try
@@ -57,6 +57,13 @@ namespace BuffetManagement.Negócio
                     comando.CommandText += $"and telefone = @telefone";
                     comando.Parameters.Add(new MySqlParameter("telefone", telefone));
                 }
+                if (Id != 0)
+                {
+
+                    commando.CommandText += $"and id = @id";
+                    commando.Parameters.Add(new MySqlParameter("id", Id));
+                }
+
                 var reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
