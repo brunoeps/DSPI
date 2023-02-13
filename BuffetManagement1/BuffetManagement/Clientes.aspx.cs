@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BuffetManagement.Modelo;
+using Serilog;
 
 namespace BuffetManagement
 {
@@ -13,18 +14,26 @@ namespace BuffetManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Log.Information("entrou na página cliente");
         }
 
         protected void btnCadastraCliente_Click(object sender, EventArgs e)
         {
-            Modelo.Cliente NovoCliente = new Modelo.Cliente();
-            NovoCliente.Nome = txtNomeCliente.Text;
-            NovoCliente.Cpf = txtCPFCliente.Text;
-            NovoCliente.Telefone = txtTelefoneCliente.Text;
+            try
+            {
+                Modelo.Cliente NovoCliente = new Modelo.Cliente();
+                NovoCliente.Nome = txtNomeCliente.Text;
+                NovoCliente.Cpf = txtCPFCliente.Text;
+                NovoCliente.Telefone = txtTelefoneCliente.Text;
 
-            Negócio.Cliente AcoesCliente = new Negócio.Cliente();
-            AcoesCliente.Create(NovoCliente);
+                Negócio.Cliente AcoesCliente = new Negócio.Cliente();
+                AcoesCliente.Create(NovoCliente);
+            }
+            catch (Exception er)
+            {
+                SiteMaster.ExibirAlert(this, "Erro no cadastro!");
+                Log.Error("Erro! " + er.Message);
+            }
         }
 
         protected void btnPesquisaCliente_Click(object sender, EventArgs e)
@@ -51,7 +60,7 @@ namespace BuffetManagement
 
             if (e.CommandName == "editar")
             {
-                Response.Redirect("EditarCliente.aspx?id=" + clientes[index].Id);
+                Response.Redirect("Editar/EditarCliente.aspx?id=" + clientes[index].Id);
             }
         }
 
