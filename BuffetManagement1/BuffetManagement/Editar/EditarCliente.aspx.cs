@@ -14,11 +14,10 @@ namespace BuffetManagement.Editar
             if (IsPostBack == false)
             {
                 string Id = Request.QueryString["Id"].ToString();
-                var cliente = new Negócio.Cliente().Read("", Convert.ToInt32(Id));
-                txtNome.Text = cliente.
+                var cliente = new Negócio.Cliente().Read("", "", "", Convert.ToInt32(Id));
+                //txtNome.Text = cliente.
 
-                    // PRÓXIMA AULA INICIAR POR AQUI, E PELA CLASSE NEGÓCIO (READ) POIS VAMOS PRECISAR DE ID PARA RESOLVER O PROBLEMA DA EDIÇÃO!!!!!!!!
-
+                // PRÓXIMA AULA INICIAR POR AQUI, E PELA CLASSE NEGÓCIO (READ) POIS VAMOS PRECISAR DE ID PARA RESOLVER O PROBLEMA DA EDIÇÃO!!!!!!!!
             }
         }
 

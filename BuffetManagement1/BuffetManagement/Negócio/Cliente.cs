@@ -45,11 +45,11 @@ namespace BuffetManagement.Negócio
                     comando.CommandText += $"and nome LIKE @nome";
                     comando.Parameters.Add(new MySqlParameter("nome", $"%{nome}%"));
                 }
-                
+
                 if (cpf.Equals("") == false)
                 {
                     comando.CommandText += $"and cpf = @cpf";
-                    comando.Parameters.Add(new MySqlParameter("cpf",cpf));
+                    comando.Parameters.Add(new MySqlParameter("cpf", cpf));
                 }
 
                 if (telefone.Equals("") == false)
@@ -57,11 +57,11 @@ namespace BuffetManagement.Negócio
                     comando.CommandText += $"and telefone = @telefone";
                     comando.Parameters.Add(new MySqlParameter("telefone", telefone));
                 }
-                if (Id != 0)
-                {
 
-                    commando.CommandText += $"and id = @id";
-                    commando.Parameters.Add(new MySqlParameter("id", Id));
+                if (id != 0)
+                {
+                    comando.CommandText += $"and id = @id";
+                    comando.Parameters.Add(new MySqlParameter("id", id));
                 }
 
                 var reader = comando.ExecuteReader();
