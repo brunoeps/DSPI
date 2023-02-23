@@ -25,12 +25,13 @@ namespace BuffetManagement.Negócio
                 comando.Parameters.Add(new MySqlParameter("telefone", cliente.Telefone));
                 comando.ExecuteNonQuery();
                 connection.Close();
+                return true;
             }
-            catch
+            catch (Exception e)
             {
                 return false;
             }
-            return true;
+
         }
 
         public List<Modelo.Cliente> Read(string nome, string cpf, string telefone, int id)

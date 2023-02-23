@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1758
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuffetManagement", "BuffetManagement\BuffetManagement.csproj", "{79EB756B-3C3B-4068-83F2-D576B614ED1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{5E6A2679-EDFE-4107-BEA6-536E6F77DD78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{79EB756B-3C3B-4068-83F2-D576B614ED1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79EB756B-3C3B-4068-83F2-D576B614ED1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79EB756B-3C3B-4068-83F2-D576B614ED1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E6A2679-EDFE-4107-BEA6-536E6F77DD78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E6A2679-EDFE-4107-BEA6-536E6F77DD78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E6A2679-EDFE-4107-BEA6-536E6F77DD78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E6A2679-EDFE-4107-BEA6-536E6F77DD78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
