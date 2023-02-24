@@ -5,10 +5,10 @@ using System.Web;
 
 namespace BuffetManagement.Modelo
 {
-    public class Produto
+    public class Pacotes
     {
         public int Id { get; set; }
-        public string Item { get; set; }
-        public int Quantidade { get; set; }
+        public string Nome { get; set; }
+        public float PrecoPP { get; set; }
     }
 }

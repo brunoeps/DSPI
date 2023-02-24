@@ -13,13 +13,22 @@ namespace BuffetManagement {
     public partial class Contact {
         
         /// <summary>
-        /// Controle txtItemProduto.
+        /// Controle txtNomePacote.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtItemProduto;
+        protected global::System.Web.UI.WebControls.TextBox txtNomePacote;
+        
+        /// <summary>
+        /// Controle txtPrecoPorPessoa.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPrecoPorPessoa;
         
         /// <summary>
         /// Controle txtQuantidadeProduto.

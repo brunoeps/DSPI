@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Produtos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Produtos.aspx.cs" Inherits="BuffetManagement.Contact" %>
+﻿<%@ Page Title="Produtos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Pacotes.aspx.cs" Inherits="BuffetManagement.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -20,10 +20,11 @@
             }
         </style>
 
-        <h1>Produtos</h1>
-        <p class="lead">Item:</p>
-        <asp:TextBox runat="server" ID="txtItemProduto" CssClass="form-control" placeholder="Insira o nome do produto"></asp:TextBox>
-        <p class="lead">Quantidade:</p>
+        <h1>Pacotes</h1>
+        <p class="lead">Nome:</p>
+        <asp:TextBox runat="server" ID="txtNomePacote" CssClass="form-control" placeholder="Insira o nome do pacote"></asp:TextBox>
+        <p class="lead">Preço por Pessoa:</p>
+        <asp:TextBox runat="server" ID="txtPrecoPorPessoa" CssClass="form-control" placeholder="insira o valor do por pessoa do pacote"></asp:TextBox>
         <asp:TextBox runat="server" ID="txtQuantidadeProduto" CssClass="form-control" placeholder="Insira a quantidade de produtos"></asp:TextBox>
         <asp:Button runat="server" ID="btnCadastraProduto" Text="Cadastrar" class="button" OnClick="btnCadastraProduto_Click" />
         <asp:Button runat="server" ID="btnPesquisaProduto" Text="Pesquisar" class="button" OnClick="btnPesquisaProduto_Click" />

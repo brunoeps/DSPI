@@ -143,7 +143,7 @@
     <Content Include="Financeiro.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Pedidos.aspx" />
-    <Content Include="Produtos.aspx" />
+    <Content Include="Pacotes.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -215,8 +215,9 @@
     </Compile>
     <Compile Include="Modelo\Cliente.cs" />
     <Compile Include="Modelo\Fornecedor.cs" />
-    <Compile Include="Modelo\Produto.cs" />
+    <Compile Include="Modelo\Pacotes.cs" />
     <Compile Include="Negócio\Cliente.cs" />
+    <Compile Include="Negócio\Pacotes.cs" />
     <Compile Include="Pedidos.aspx.cs">
       <DependentUpon>Pedidos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -224,12 +225,12 @@
     <Compile Include="Pedidos.aspx.designer.cs">
       <DependentUpon>Pedidos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Produtos.aspx.cs">
-      <DependentUpon>Produtos.aspx</DependentUpon>
+    <Compile Include="Pacotes.aspx.cs">
+      <DependentUpon>Pacotes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Produtos.aspx.designer.cs">
-      <DependentUpon>Produtos.aspx</DependentUpon>
+    <Compile Include="Pacotes.aspx.designer.cs">
+      <DependentUpon>Pacotes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
