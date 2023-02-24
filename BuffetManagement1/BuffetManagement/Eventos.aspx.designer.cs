@@ -31,21 +31,57 @@ namespace BuffetManagement {
         protected global::System.Web.UI.WebControls.DropDownList ddlPacote;
         
         /// <summary>
-        /// Controle btnCadastraPedido.
+        /// Controle btnAdicionar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCadastraPedido;
+        protected global::System.Web.UI.WebControls.Button btnAdicionar;
         
         /// <summary>
-        /// Controle btnPesquisaPedido.
+        /// Controle contador.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPesquisaPedido;
+        protected global::System.Web.UI.WebControls.Label contador;
+        
+        /// <summary>
+        /// Controle hdnContador.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnContador;
+        
+        /// <summary>
+        /// Controle btnSubtrair.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubtrair;
+        
+        /// <summary>
+        /// Controle btnCadastraEvento.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCadastraEvento;
+        
+        /// <summary>
+        /// Controle btnPesquisaEvento.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPesquisaEvento;
     }
 }

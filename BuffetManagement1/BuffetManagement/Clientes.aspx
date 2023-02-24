@@ -7,8 +7,6 @@
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
                 <h1>Clientes</h1>
-                <br />
-                <br />
                 <p class="lead">Nome:</p>
                 <asp:TextBox runat="server" ID="txtNomeCliente" CssClass="form-control" placeholder="Insira o nome do cliente"></asp:TextBox><br />
                 <p class="lead">CPF:</p>
