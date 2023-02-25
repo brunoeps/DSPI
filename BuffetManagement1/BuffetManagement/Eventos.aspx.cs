@@ -10,7 +10,7 @@ namespace BuffetManagement
 {
     public partial class Pedidos : System.Web.UI.Page
     {
-        private int _contador;
+
         private MySqlConnection connection;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -19,7 +19,28 @@ namespace BuffetManagement
             if (!IsPostBack)
             {
                 contador.Text = hdnContador.Value;
+
+                connection.Open();
+
+                var reader = new MySqlCommand("SELECT nome from clientes", connection).ExecuteReader();
+                while (reader.Read())
+                {
+                    ddlCliente.Items.Add(reader.GetString(0));
+                }
+
+                connection.Close();
+
+                connection.Open();
+
+                var reader1 = new MySqlCommand("SELECT nome from pacotes", connection).ExecuteReader();
+                while (reader1.Read())
+                {
+                    ddlPacote.Items.Add(reader1.GetString(0));
+                }
+
+                connection.Close();
             }
+
         }
 
         protected void btnCadastraEvento_Click(object sender, EventArgs e)
@@ -56,16 +77,6 @@ namespace BuffetManagement
                 hdnContador.Value = valorAtual.ToString();
                 contador.Text = hdnContador.Value;
             }
-        }
-
-        protected void ddlCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void ddlPacote_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

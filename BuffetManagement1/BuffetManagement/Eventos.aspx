@@ -8,19 +8,21 @@
             <div class="col-sm-4">
                 <h1>Eventos</h1>
                 <p class="lead">Cliente:</p>
-                <asp:DropDownList runat="server" ID="ddlCliente" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="ddlCliente_SelectedIndexChanged"></asp:DropDownList><br />
+                <asp:DropDownList runat="server" ID="ddlCliente" AutoPostBack="true" CssClass="form-control" ></asp:DropDownList><br />
                 <p class="lead">Pacote:</p>
-                <asp:DropDownList runat="server" ID="ddlPacote" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="ddlPacote_SelectedIndexChanged"></asp:DropDownList><br />
+                <asp:DropDownList runat="server" ID="ddlPacote" AutoPostBack="true" CssClass="form-control" ></asp:DropDownList><br />
 
                 <p class="lead">Quantidade:</p>
-
-                <asp:Button ID="btnAdicionar" runat="server" Text="+1" OnClick="btnAdicionar_Click" />
+                <asp:Button ID="btnSubtrair" runat="server" Text="-1" OnClick="btnSubtrair_Click" />
                 <asp:Label ID="contador" runat="server" Text=" 0 "></asp:Label>
                 <asp:HiddenField ID="hdnContador" runat="server" Value=" 0 " />
-                <asp:Button ID="btnSubtrair" runat="server" Text="-1" OnClick="btnSubtrair_Click" />
+                <asp:Button ID="btnAdicionar" runat="server" Text="+1" OnClick="btnAdicionar_Click" />
                 <br />
                 <br />
                 <br />
+
+                <p class="lead">Valor:</p>
+                
 
                 <style>
                     .button {

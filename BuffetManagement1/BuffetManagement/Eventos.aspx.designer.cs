@@ -31,13 +31,13 @@ namespace BuffetManagement {
         protected global::System.Web.UI.WebControls.DropDownList ddlPacote;
         
         /// <summary>
-        /// Controle btnAdicionar.
+        /// Controle btnSubtrair.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdicionar;
+        protected global::System.Web.UI.WebControls.Button btnSubtrair;
         
         /// <summary>
         /// Controle contador.
@@ -58,13 +58,13 @@ namespace BuffetManagement {
         protected global::System.Web.UI.WebControls.HiddenField hdnContador;
         
         /// <summary>
-        /// Controle btnSubtrair.
+        /// Controle btnAdicionar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubtrair;
+        protected global::System.Web.UI.WebControls.Button btnAdicionar;
         
         /// <summary>
         /// Controle btnCadastraEvento.
