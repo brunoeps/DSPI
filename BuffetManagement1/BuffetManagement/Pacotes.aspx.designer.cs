@@ -31,15 +31,6 @@ namespace BuffetManagement {
         protected global::System.Web.UI.WebControls.TextBox txtPrecoPorPessoa;
         
         /// <summary>
-        /// Controle txtQuantidadeProduto.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQuantidadeProduto;
-        
-        /// <summary>
         /// Controle btnCadastraProduto.
         /// </summary>
         /// <remarks>
@@ -56,5 +47,14 @@ namespace BuffetManagement {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPesquisaProduto;
+        
+        /// <summary>
+        /// Controle grdPacotes.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdPacotes;
     }
 }
