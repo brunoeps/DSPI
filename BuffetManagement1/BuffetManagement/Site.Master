@@ -52,9 +52,9 @@
                     <ul class="nav navbar-nav">
 
                         <li><a runat="server" href="~/Clientes">Clientes</a></li>
-                        <li><a runat="server" href="~/Produtos">Produtos</a></li>
+                        <li><a runat="server" href="~/Pacotes">Pacotes</a></li>
                         <li><a runat="server" href="~/Financeiro">Financeiro</a></li>
-                        <li><a runat="server" href="~/Pedidos">Pedidos</a></li>
+                        <li><a runat="server" href="~/Eventos">Eventos</a></li>
                     </ul>
                 </div>
             </div>
