@@ -13,22 +13,22 @@ namespace BuffetManagement {
     public partial class Contact {
         
         /// <summary>
-        /// Controle txtItemProduto.
+        /// Controle txtNomePacote.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtItemProduto;
+        protected global::System.Web.UI.WebControls.TextBox txtNomePacote;
         
         /// <summary>
-        /// Controle txtQuantidadeProduto.
+        /// Controle txtPrecoPorPessoa.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQuantidadeProduto;
+        protected global::System.Web.UI.WebControls.TextBox txtPrecoPorPessoa;
         
         /// <summary>
         /// Controle btnCadastraProduto.
@@ -47,5 +47,14 @@ namespace BuffetManagement {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPesquisaProduto;
+        
+        /// <summary>
+        /// Controle grdPacotes.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdPacotes;
     }
 }
