@@ -142,7 +142,6 @@
     <Content Include="Editar\EditarCliente.aspx" />
     <Content Include="Financeiro.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Pedidos.aspx" />
     <Content Include="Pacotes.aspx" />
     <Content Include="Eventos.aspx" />
     <Content Include="Content\Site.css" />
@@ -220,9 +219,6 @@
     <Compile Include="Modelo\Pacotes.cs" />
     <Compile Include="Negócio\Cliente.cs" />
     <Compile Include="Negócio\Pacotes.cs" />
-    <Compile Include="Pedidos.aspx.cs">
-      <DependentUpon>Pedidos.aspx</DependentUpon>
-	</Compile>
     <Compile Include="Eventos.aspx.cs">
       <DependentUpon>Eventos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -232,7 +228,8 @@
     </Compile>
     <Compile Include="Pacotes.aspx.cs">
       <DependentUpon>Pacotes.aspx</DependentUpon>
-	  </Compile>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Negócio\Evento.cs" />
     <Compile Include="Pacotes.aspx.designer.cs">
       <DependentUpon>Pacotes.aspx</DependentUpon>
