@@ -14,7 +14,12 @@ namespace BuffetManagement
 
         }
 
-        protected void btnGasto_Click(object sender, EventArgs e)
+        protected void btnPesquisaGasto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCadastraGasto_Click(object sender, EventArgs e)
         {
 
         }

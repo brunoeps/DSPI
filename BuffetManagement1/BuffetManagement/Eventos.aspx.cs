@@ -15,10 +15,11 @@ namespace BuffetManagement
 
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             connection = new MySqlConnection(SiteMaster.ConnectionString);
             if (!IsPostBack)
             {
-                contador.Text = hdnContador.Value;
+                txtQuantidade.Text = hdnContador.Value;
 
                 connection.Open();
 
@@ -39,9 +40,12 @@ namespace BuffetManagement
                 }
 
                 connection.Close();
+
             }
 
         }
+
+     
 
         protected void btnCadastraEvento_Click(object sender, EventArgs e)
         {
@@ -64,7 +68,7 @@ namespace BuffetManagement
             int valorAtual = int.Parse(hdnContador.Value);
             valorAtual++;
             hdnContador.Value = valorAtual.ToString();
-            contador.Text = hdnContador.Value;
+            txtQuantidade.Text = hdnContador.Value;
         }
 
         protected void btnSubtrair_Click(object sender, EventArgs e)
@@ -75,7 +79,18 @@ namespace BuffetManagement
             {
                 valorAtual--;
                 hdnContador.Value = valorAtual.ToString();
-                contador.Text = hdnContador.Value;
+                txtQuantidade.Text = hdnContador.Value;
+            }
+        }
+
+        protected void txtQuantidade_TextChanged(object sender, EventArgs e)
+        {
+            int value;
+            if (!int.TryParse(txtQuantidade.Text, out value))
+            {
+                // Se o valor inserido não for um número inteiro, exibe uma mensagem de erro.
+                Response.Write("<script>alert('Insira somente números inteiros');</script>");
+                txtQuantidade.Text = "";
             }
         }
     }

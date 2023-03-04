@@ -32,8 +32,8 @@
                 </style>
 
                 <div style="display: flex; justify-content: center; align-items: center;">
-                    <asp:Button runat="server" ID="btnCadastraCliente" Text="Cadastrar"  style="margin-right:40px" class="button" OnClick="btnCadastraCliente_Click" />
-                    <asp:Button runat="server" ID="btnPesquisaCliente" Text="Pesquisar" style="margin-right:40px" class="button" OnClick="btnPesquisaCliente_Click" />
+                    <asp:Button runat="server" ID="btnCadastraCliente" Text="Cadastrar" Style="margin-right: 40px" class="button" OnClick="btnCadastraCliente_Click" />
+                    <asp:Button runat="server" ID="btnPesquisaCliente" Text="Pesquisar" Style="margin-right: 40px" class="button" OnClick="btnPesquisaCliente_Click" />
                 </div>
                 <br />
                 <br />

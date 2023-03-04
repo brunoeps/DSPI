@@ -14,7 +14,7 @@
 
                 <p class="lead">Quantidade:</p>
                 <asp:Button ID="btnSubtrair" runat="server" Text="-1" OnClick="btnSubtrair_Click" />
-                <asp:Label ID="contador" runat="server" Text=" 0 "></asp:Label>
+                <asp:TextBox runat="server" ID="txtQuantidade" Text="0" OnTextChanged="txtQuantidade_TextChanged" AutoPostBack="true"></asp:TextBox>
                 <asp:HiddenField ID="hdnContador" runat="server" Value=" 0 " />
                 <asp:Button ID="btnAdicionar" runat="server" Text="+1" OnClick="btnAdicionar_Click" />
                 <br />
@@ -22,7 +22,8 @@
                 <br />
 
                 <p class="lead">Valor:</p>
-                
+                <asp:Label runat="server" ID="lblValor"></asp:Label>
+
 
                 <style>
                     .button {

@@ -40,13 +40,13 @@ namespace BuffetManagement {
         protected global::System.Web.UI.WebControls.Button btnSubtrair;
         
         /// <summary>
-        /// Controle contador.
+        /// Controle txtQuantidade.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label contador;
+        protected global::System.Web.UI.WebControls.TextBox txtQuantidade;
         
         /// <summary>
         /// Controle hdnContador.
@@ -65,6 +65,15 @@ namespace BuffetManagement {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAdicionar;
+        
+        /// <summary>
+        /// Controle lblValor.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblValor;
         
         /// <summary>
         /// Controle btnCadastraEvento.
