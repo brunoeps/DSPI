@@ -32,8 +32,8 @@
                 </style>
 
                 <div style="display: flex; justify-content: center; align-items: center;">
-                    <asp:Button runat="server" ID="btnCadastraProduto" Text="Cadastrar" Style="margin-right: 40px" class="button" OnClick="btnCadastraProduto_Click" />
-                    <asp:Button runat="server" ID="btnPesquisaProduto" Text="Pesquisar" Style="margin-right: 40px" class="button" OnClick="btnPesquisaProduto_Click" />
+                    <asp:Button runat="server" ID="btnCadastraPacote" Text="Cadastrar" Style="margin-right: 40px" class="button" OnClick="btnCadastraPacote_Click" />
+                    <asp:Button runat="server" ID="btnPesquisaPacote" Text="Pesquisar" Style="margin-right: 40px" class="button" OnClick="btnPesquisaPacote_Click" />
                 </div>
 
             <div class="row">
@@ -42,7 +42,7 @@
                     OnRowCommand="grdPacotes_RowCommand" AllowPaging="true" PageSize="10" OnPageIndexChanging="grdPacotes_PageIndexChanging">
                     <Columns>
                         <asp:BoundField DataField="nome" HeaderText="NOME" />
-                        <asp:BoundField DataField="preco" HeaderText="PREÇO" />
+                        <asp:BoundField DataField="precopp" HeaderText="PREÇO" />
                         <asp:ButtonField ButtonType="Link" CommandName="editar" ControlStyle-CssClass="btn btn-warning" Text="Editar" />
                         <asp:ButtonField ButtonType="Link" CommandName="excluir" ControlStyle-CssClass="btn btn-danger" Text="Excluir" />
                     </Columns>

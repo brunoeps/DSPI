@@ -140,6 +140,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Editar\EditarCliente.aspx" />
+    <Content Include="Editar\EditarPacote.aspx" />
     <Content Include="Financeiro.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Pacotes.aspx" />
@@ -205,6 +206,13 @@
     </Compile>
     <Compile Include="Editar\EditarCliente.aspx.designer.cs">
       <DependentUpon>EditarCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Editar\EditarPacote.aspx.cs">
+      <DependentUpon>EditarPacote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editar\EditarPacote.aspx.designer.cs">
+      <DependentUpon>EditarPacote.aspx</DependentUpon>
     </Compile>
     <Compile Include="Financeiro.aspx.cs">
       <DependentUpon>Financeiro.aspx</DependentUpon>

@@ -15,7 +15,7 @@ namespace BuffetManagement
 
         }
 
-        protected void btnCadastraProduto_Click(object sender, EventArgs e)
+        protected void btnCadastraPacote_Click(object sender, EventArgs e)
         {
             try
             {
@@ -34,7 +34,7 @@ namespace BuffetManagement
             }
         }
 
-        protected void btnPesquisaProduto_Click(object sender, EventArgs e)
+        protected void btnPesquisaPacote_Click(object sender, EventArgs e)
         {
             var pacotes = new Negócio.Pacotes().Read(txtNomePacote.Text, txtPrecoPorPessoa.Text, 0);
             Session["dados"] = pacotes;
@@ -49,16 +49,16 @@ namespace BuffetManagement
 
             if (e.CommandName == "excluir")
             {
-                if (new Negócio.Cliente().Delete(pacotes[index].Id))
-                    SiteMaster.ExibirAlert(this, "Cliente excluído com sucesso!");
+                if (new Negócio.Pacotes().Delete(pacotes[index].Id))
+                    SiteMaster.ExibirAlert(this, "Pacote excluído com sucesso!");
                 else
-                    SiteMaster.ExibirAlert(this, "O cliente não pode ser excluído porque ele está sendo usado!");
-                btnPesquisaProduto_Click(null, null);
+                    SiteMaster.ExibirAlert(this, "O pacote não pode ser excluído porque ele está sendo usado!");
+                btnPesquisaPacote_Click(null, null);
             }
 
             if (e.CommandName == "editar")
             {
-                //Response.Redirect("Editar/EditarProduto.aspx?id=" + pacotes[index].Id);
+                Response.Redirect("Editar/EditarPacote.aspx?id=" + pacotes[index].Id);
             }
         }
 

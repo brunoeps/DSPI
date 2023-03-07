@@ -64,7 +64,7 @@ namespace BuffetManagement.Negócio
                     pacotes.Nome = reader.GetString("nome");
                     pacotes.PrecoPP = reader.GetFloat("preco");
                     pacotes.Id = reader.GetInt32("id");
-                    packs.Add(pacotes);                 
+                    packs.Add(pacotes);
                 }
                 connection.Close();
             }
@@ -76,7 +76,7 @@ namespace BuffetManagement.Negócio
             try
             {
                 connection.Open();
-                var comando = new MySqlCommand($@"UPDATE pacotes SET nome = @nome, preco = @preco, WHERE id = @id", connection);
+                var comando = new MySqlCommand($@"UPDATE pacotes SET nome = @nome, preco = @preco WHERE id = @id", connection);
                 comando.Parameters.Add(new MySqlParameter("nome", pacotes.Nome));
                 comando.Parameters.Add(new MySqlParameter("preco", pacotes.PrecoPP));
                 comando.Parameters.Add(new MySqlParameter("id", pacotes.Id));

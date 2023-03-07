@@ -7,10 +7,10 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace BuffetManagement {
+namespace BuffetManagement.Editar {
     
     
-    public partial class Contact {
+    public partial class EditarPacote {
         
         /// <summary>
         /// Controle txtNomePacote.
@@ -31,30 +31,12 @@ namespace BuffetManagement {
         protected global::System.Web.UI.WebControls.TextBox txtPrecoPorPessoa;
         
         /// <summary>
-        /// Controle btnCadastraPacote.
+        /// Controle btnEditar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCadastraPacote;
-        
-        /// <summary>
-        /// Controle btnPesquisaPacote.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPesquisaPacote;
-        
-        /// <summary>
-        /// Controle grdPacotes.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdPacotes;
+        protected global::System.Web.UI.WebControls.Button btnEditar;
     }
 }
