@@ -15,14 +15,11 @@ namespace BuffetManagement
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
             connection = new MySqlConnection(SiteMaster.ConnectionString);
             if (!IsPostBack)
             {
-                txtQuantidade.Text = hdnContador.Value;
-
                 connection.Open();
-
                 var reader = new MySqlCommand("SELECT nome from clientes", connection).ExecuteReader();
                 while (reader.Read())
                 {
@@ -45,7 +42,7 @@ namespace BuffetManagement
 
         }
 
-     
+
 
         protected void btnCadastraEvento_Click(object sender, EventArgs e)
         {
@@ -60,27 +57,6 @@ namespace BuffetManagement
         protected void grdEventos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
 
-        }
-
-        protected void btnAdicionar_Click(object sender, EventArgs e)
-        {
-            // Incrementa o valor do contador
-            int valorAtual = int.Parse(hdnContador.Value);
-            valorAtual++;
-            hdnContador.Value = valorAtual.ToString();
-            txtQuantidade.Text = hdnContador.Value;
-        }
-
-        protected void btnSubtrair_Click(object sender, EventArgs e)
-        {
-            // Subtrai o valor do contador, se possível
-            int valorAtual = int.Parse(hdnContador.Value);
-            if (valorAtual > 0)
-            {
-                valorAtual--;
-                hdnContador.Value = valorAtual.ToString();
-                txtQuantidade.Text = hdnContador.Value;
-            }
         }
 
         protected void txtQuantidade_TextChanged(object sender, EventArgs e)
