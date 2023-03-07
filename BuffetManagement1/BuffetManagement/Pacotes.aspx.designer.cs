@@ -31,22 +31,22 @@ namespace BuffetManagement {
         protected global::System.Web.UI.WebControls.TextBox txtPrecoPorPessoa;
         
         /// <summary>
-        /// Controle btnCadastraProduto.
+        /// Controle btnCadastraPacote.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCadastraProduto;
+        protected global::System.Web.UI.WebControls.Button btnCadastraPacote;
         
         /// <summary>
-        /// Controle btnPesquisaProduto.
+        /// Controle btnPesquisaPacote.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPesquisaProduto;
+        protected global::System.Web.UI.WebControls.Button btnPesquisaPacote;
         
         /// <summary>
         /// Controle grdPacotes.

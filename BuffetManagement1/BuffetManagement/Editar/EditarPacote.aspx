@@ -1,22 +1,19 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditarCliente.aspx.cs" Inherits="BuffetManagement.Editar.EditarCliente" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditarPacote.aspx.cs" Inherits="BuffetManagement.Editar.EditarPacote" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
     <div class="jumbotron">
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
                 <h1>Editar</h1>
                 <p class="lead">Nome:</p>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtNome"></asp:TextBox>
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtNomePacote"></asp:TextBox>
                 <br />
-                <p class="lead">CPF:</p>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtCPF"></asp:TextBox>
-                <br />
-                <p class="lead">Telefone:</p>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtTelefone"></asp:TextBox>
+                <p class="lead">Preço:</p>
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtPrecoPorPessoa"></asp:TextBox>
                 <br />
                 <br />
+
                 <style>
                     .button {
                         background-color: Highlight;
@@ -33,9 +30,10 @@
                     }
                 </style>
                 <div style="display: flex; justify-content: center; align-items: center;">
-                    <asp:Button runat="server" ID="btnEditar" Style="margin-right: 40px" class="button" OnClick="btnEditar_Click" Text="Editar cliente" />
+                    <asp:Button runat="server" ID="btnEditar" Style="margin-right: 40px" class="button" OnClick="btnEditar_Click" Text="Editar pacote" />
                 </div>
             </div>
         </div>
     </div>
+
 </asp:Content>

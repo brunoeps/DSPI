@@ -7,54 +7,36 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace BuffetManagement {
+namespace BuffetManagement.Editar {
     
     
-    public partial class Financeiro {
+    public partial class EditarPacote {
         
         /// <summary>
-        /// Controle txtFornecedorFinanceiro.
+        /// Controle txtNomePacote.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFornecedorFinanceiro;
+        protected global::System.Web.UI.WebControls.TextBox txtNomePacote;
         
         /// <summary>
-        /// Controle txtCPFCliente.
+        /// Controle txtPrecoPorPessoa.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCPFCliente;
+        protected global::System.Web.UI.WebControls.TextBox txtPrecoPorPessoa;
         
         /// <summary>
-        /// Controle txtTelefoneCliente.
+        /// Controle btnEditar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefoneCliente;
-        
-        /// <summary>
-        /// Controle btnCadastraGasto.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCadastraGasto;
-        
-        /// <summary>
-        /// Controle btnPesquisaGasto.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPesquisaGasto;
+        protected global::System.Web.UI.WebControls.Button btnEditar;
     }
 }

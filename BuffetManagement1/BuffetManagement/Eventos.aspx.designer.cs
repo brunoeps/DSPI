@@ -31,40 +31,22 @@ namespace BuffetManagement {
         protected global::System.Web.UI.WebControls.DropDownList ddlPacote;
         
         /// <summary>
-        /// Controle btnSubtrair.
+        /// Controle txtQuantidade.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubtrair;
+        protected global::System.Web.UI.WebControls.TextBox txtQuantidade;
         
         /// <summary>
-        /// Controle contador.
+        /// Controle lblValor.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label contador;
-        
-        /// <summary>
-        /// Controle hdnContador.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnContador;
-        
-        /// <summary>
-        /// Controle btnAdicionar.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdicionar;
+        protected global::System.Web.UI.WebControls.Label lblValor;
         
         /// <summary>
         /// Controle btnCadastraEvento.
