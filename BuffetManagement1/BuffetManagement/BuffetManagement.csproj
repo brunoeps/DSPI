@@ -221,10 +221,10 @@
     </Compile>
     <Compile Include="Modelo\Cliente.cs" />
     <Compile Include="Modelo\Evento.cs" />
-    <Compile Include="Modelo\Fornecedor.cs" />
+    <Compile Include="Modelo\Financeiro.cs" />
     <Compile Include="Modelo\Pacotes.cs" />
     <Compile Include="Negócio\Cliente.cs" />
-    <Compile Include="Negócio\Fornecedor.cs" />
+    <Compile Include="Negócio\Financeiro.cs" />
     <Compile Include="Negócio\Pacotes.cs" />
     <Compile Include="Eventos.aspx.cs">
       <DependentUpon>Eventos.aspx</DependentUpon>
