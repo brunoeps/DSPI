@@ -5,10 +5,10 @@ using System.Web;
 
 namespace BuffetManagement.Modelo
 {
-    public class Fornecedor
+    public class Financeiro
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
+        public string Fornecedor { get; set; }
         public double Valor { get; set; }
         public DateTime Vencimento { get; set; }
     }

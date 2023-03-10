@@ -7,38 +7,40 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace BuffetManagement {
-    
-    
-    public partial class Financeiro {
-        
+namespace BuffetManagement
+{
+
+
+    public partial class Financeiro
+    {
+
         /// <summary>
-        /// Controle txtFornecedorFinanceiro.
+        /// Controle txtFornecedor.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFornecedorFinanceiro;
-        
+        protected global::System.Web.UI.WebControls.TextBox txtFornecedor;
+
         /// <summary>
-        /// Controle txtCPFCliente.
+        /// Controle txtValor.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCPFCliente;
-        
+        protected global::System.Web.UI.WebControls.TextBox txtValor;
+
         /// <summary>
-        /// Controle txtTelefoneCliente.
+        /// Controle txtDataVencimento.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefoneCliente;
-        
+        protected global::System.Web.UI.WebControls.TextBox txtDataVencimento;
+
         /// <summary>
         /// Controle btnCadastraGasto.
         /// </summary>
@@ -47,7 +49,7 @@ namespace BuffetManagement {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCadastraGasto;
-        
+
         /// <summary>
         /// Controle btnPesquisaGasto.
         /// </summary>

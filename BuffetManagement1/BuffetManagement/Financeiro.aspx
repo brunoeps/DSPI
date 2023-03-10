@@ -9,13 +9,13 @@
 
                 <h1>Financeiro</h1>
                 <p class="lead">Fornecedor:</p>
-                <asp:TextBox runat="server" ID="txtFornecedorFinanceiro" CssClass="form-control" placeholder="Insira o nome do fornecedor"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtFornecedor" CssClass="form-control" placeholder="Insira o nome do fornecedor"></asp:TextBox>
                 <br />
                 <p class="lead">Valor:</p>
-                <asp:TextBox runat="server" ID="txtCPFCliente" CssClass="form-control" placeholder="Insira o valor da transação"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtValor" CssClass="form-control" placeholder="Insira o valor da transação"></asp:TextBox>
                 <br />
                 <p class="lead">Vencimento:</p>
-                <asp:TextBox runat="server" ID="txtTelefoneCliente" CssClass="form-control" placeholder="Insira a data de vencimento da transação"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtDataVencimento" CssClass="form-control" placeholder="Insira a data de vencimento"></asp:TextBox>
                 <br />
                 <br />
 
