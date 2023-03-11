@@ -6,11 +6,12 @@ using System.Web;
 
 namespace BuffetManagement.Negócio
 {
-    public class Fornecedor
+    public class Financeiro
+
     {
         private MySqlConnection connection;
 
-        public Fornecedor()
+        public Financeiro()
         {
             connection = new MySqlConnection(SiteMaster.ConnectionString);
         }
@@ -33,7 +34,7 @@ namespace BuffetManagement.Negócio
             }
 
         }
-        public List<Modelo.Financeiro> Read(string fornecedor, string valor, int id, DateTime vencimento)
+        public List<Modelo.Financeiro> Read(string fornecedor, string valor, int id, string vencimento)
         {
             var packs = new List<Modelo.Financeiro>();
             try

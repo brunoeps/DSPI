@@ -7,13 +7,11 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace BuffetManagement
-{
-
-
-    public partial class Financeiro
-    {
-
+namespace BuffetManagement {
+    
+    
+    public partial class Financeiro {
+        
         /// <summary>
         /// Controle txtFornecedor.
         /// </summary>
@@ -22,7 +20,7 @@ namespace BuffetManagement
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFornecedor;
-
+        
         /// <summary>
         /// Controle txtValor.
         /// </summary>
@@ -31,7 +29,7 @@ namespace BuffetManagement
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtValor;
-
+        
         /// <summary>
         /// Controle txtDataVencimento.
         /// </summary>
@@ -40,7 +38,7 @@ namespace BuffetManagement
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDataVencimento;
-
+        
         /// <summary>
         /// Controle btnCadastraGasto.
         /// </summary>
@@ -49,7 +47,7 @@ namespace BuffetManagement
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCadastraGasto;
-
+        
         /// <summary>
         /// Controle btnPesquisaGasto.
         /// </summary>
@@ -58,5 +56,14 @@ namespace BuffetManagement
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPesquisaGasto;
+        
+        /// <summary>
+        /// Controle grdFinanceiro.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grdFinanceiro;
     }
 }

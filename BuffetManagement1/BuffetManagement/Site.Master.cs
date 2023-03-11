@@ -9,7 +9,7 @@ namespace BuffetManagement
 {
     public partial class SiteMaster : MasterPage
     {
-        public static string ConnectionString = "Server=127.0.0.1;User ID=root;Password=;Database=dspi";
+        public static string ConnectionString = "Server=mysql5025.site4now.net;User ID=a95eb6_dspi;Password=sa*100200300;Database=db_a95eb6_dspi";
 
         protected void Page_Load(object sender, EventArgs e)
         {
