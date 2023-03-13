@@ -39,6 +39,19 @@
                     <asp:Button runat="server" ID="btnCadastraGasto" Text="Cadastrar" Style="margin-right: 40px" CssClass="button" OnClick="btnCadastraGasto_Click" />
                     <asp:Button runat="server" ID="btnPesquisaGasto" Text="Pesquisar" Style="margin-right: 40px" CssClass="button" OnClick="btnPesquisaGasto_Click" />
                 </div>
+                <div class="row">
+                    <asp:GridView runat="server" ID="grdFinanceiro" Width="100%" AutoGenerateColumns="false"
+                        CssClass="table table-sm table-bordered table-condensed table-responsive-sm table-hover table-striped"
+                        OnRowCommand="grdFinanceiro_RowCommand" AllowPaging="true" PageSize="10" OnPageIndexChanging="grdFinanceiro_PageIndexChanging">
+                        <Columns>
+                            <asp:BoundField DataField="fornecedor" HeaderText="FORNECEDOR" />
+                            <asp:BoundField DataField="valor" HeaderText="VALOR" />
+                            <asp:BoundField DataField="vencimento" HeaderText="VENCIMENTO" />
+                            <asp:ButtonField ButtonType="Link" CommandName="editar" ControlStyle-CssClass="btn btn-warning" Text="Editar" />
+                            <asp:ButtonField ButtonType="Link" CommandName="excluir" ControlStyle-CssClass="btn btn-danger" Text="Excluir" />
+                        </Columns>
+                    </asp:GridView>
+                </div>
             </div>
         </div>
 
