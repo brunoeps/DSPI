@@ -40,11 +40,11 @@ namespace BuffetManagement.Negócio
             try
             {
                 connection.Open();
-                var comando = new MySqlCommand("select * from pacotes WHERE (1=1) ", connection);
+                var comando = new MySqlCommand("select * from financeiro WHERE (1=1) ", connection);
                 if (fornecedor.Equals("") == false)
                 {
                     comando.CommandText += $"and fornecedor LIKE @fornecedor";
-                    comando.Parameters.Add(new MySqlParameter("nome", $"%{fornecedor}%"));
+                    comando.Parameters.Add(new MySqlParameter("fornecedor", $"%{fornecedor}%"));
                 }
 
                 if (valor.Equals("") == false)
@@ -77,7 +77,7 @@ namespace BuffetManagement.Negócio
                 }
                 connection.Close();
             }
-            catch { }
+            catch(Exception erro) { }
             return packs;
         }
         public bool Update(Modelo.Financeiro financeiro)
@@ -85,7 +85,7 @@ namespace BuffetManagement.Negócio
             try
             {
                 connection.Open();
-                var comando = new MySqlCommand($@"UPDATE pacotes SET fornecedor = @fornecedor, valor = @valor, vencimento =@vencimento WHERE id = @id", connection);
+                var comando = new MySqlCommand($@"UPDATE financeiro SET fornecedor = @fornecedor, valor = @valor, vencimento = @vencimento WHERE id = @id", connection);
                 comando.Parameters.Add(new MySqlParameter("fornecedor", financeiro.Fornecedor));
                 comando.Parameters.Add(new MySqlParameter("valor", financeiro.Valor));
                 comando.Parameters.Add(new MySqlParameter("vencimento", financeiro.Vencimento));

@@ -1,4 +1,4 @@
-﻿using Serilog;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,7 +44,7 @@ namespace BuffetManagement
         protected void grdFinanceiro_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             int index = Convert.ToInt32(e.CommandArgument);
-            var financeiro = (List<Modelo.Pacotes>)Session["dados"];
+            var financeiro = (List<Modelo.Financeiro>)Session["dados"];
 
             if (e.CommandName == "excluir")
             {
@@ -55,15 +55,18 @@ namespace BuffetManagement
                 btnPesquisaGasto_Click(null, null);
             }
 
-            if (e.CommandName == "editar") // mexer
+            if (e.CommandName == "editar")
             {
-                //Response.Redirect("Editar/EditarPacote.aspx?id=" + pacotes[index].Id);
+                Response.Redirect("Editar/EditarFinanceiro.aspx?id=" + financeiro[index].Id);
             }
         }
 
         protected void grdFinanceiro_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            var financeiro = (List<Financeiro>)Session["dados"];
+            grdFinanceiro.PageIndex = e.NewPageIndex;
+            grdFinanceiro.DataSource = financeiro;
+            grdFinanceiro.DataBind();
         }
     }
 }
