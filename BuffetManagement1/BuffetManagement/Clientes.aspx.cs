@@ -28,6 +28,11 @@ namespace BuffetManagement
 
                 Negócio.Cliente AcoesCliente = new Negócio.Cliente();
                 AcoesCliente.Create(NovoCliente);
+
+                SiteMaster.ExibirAlert(this, "Cliente cadastrado com sucesso!");
+                txtNomeCliente.Text = "";
+                txtCPFCliente.Text = "";
+                txtTelefoneCliente.Text = "";
             }
             catch (Exception er)
             {

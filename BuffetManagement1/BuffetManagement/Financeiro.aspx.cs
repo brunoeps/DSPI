@@ -12,7 +12,6 @@ namespace BuffetManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void btnPesquisaGasto_Click(object sender, EventArgs e)
@@ -58,7 +57,7 @@ namespace BuffetManagement
 
             if (e.CommandName == "editar") // mexer
             {
-                Response.Redirect("Editar/EditarPacote.aspx?id=" + pacotes[index].Id);
+                //Response.Redirect("Editar/EditarPacote.aspx?id=" + pacotes[index].Id);
             }
         }
 
