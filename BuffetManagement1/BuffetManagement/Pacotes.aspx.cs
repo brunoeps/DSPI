@@ -19,18 +19,22 @@ namespace BuffetManagement
         {
             try
             {
+
                 Modelo.Pacotes NovoPacote = new Modelo.Pacotes();
                 NovoPacote.Nome = txtNomePacote.Text;
                 NovoPacote.PrecoPP = float.Parse(txtPrecoPorPessoa.Text);
 
-
                 Negócio.Pacotes AcoesPacotes = new Negócio.Pacotes();
                 AcoesPacotes.Create(NovoPacote);
+
+                SiteMaster.ExibirAlert(this, "Pacote cadastrado com sucesso!");
+                txtNomePacote.Text = "";
+                txtPrecoPorPessoa.Text = "";
+
             }
             catch (Exception er)
             {
                 SiteMaster.ExibirAlert(this, "Erro no cadastro!");
-
             }
         }
 
