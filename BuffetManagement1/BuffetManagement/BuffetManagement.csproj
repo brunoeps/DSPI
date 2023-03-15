@@ -137,6 +137,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Dashboard.aspx" />
     <Content Include="Editar\EditarCliente.aspx" />
     <Content Include="Editar\EditarFinanceiro.aspx" />
     <Content Include="Editar\EditarPacote.aspx" />
@@ -200,6 +201,13 @@
       <DependentUpon>Clientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Editar\EditarCliente.aspx.cs">
       <DependentUpon>EditarCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

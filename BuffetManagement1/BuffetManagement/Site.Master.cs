@@ -21,8 +21,7 @@ namespace BuffetManagement
             page.ClientScript.RegisterStartupScript(
                  page.GetType(),
                  "MessageBox" + Guid.NewGuid(),
-                 "<script language='javascript'>alert('" + mensagem + "');</script>"
-              );
+                 "<script language='javascript'>alert('" + mensagem + "');</script>");
         }
 
         public static void ExibirAlert(Page page, string mensagem, string pagina)
@@ -30,8 +29,7 @@ namespace BuffetManagement
             page.ClientScript.RegisterStartupScript(
                  page.GetType(),
                  "MessageBox" + Guid.NewGuid(),
-                 "<script language='javascript'>alert('" + mensagem + "');window.location = '" + pagina + "';</script>"
-              );
+                 "<script language='javascript'>alert('" + mensagem + "');window.location = '" + pagina + "';</script>");
         }
     }
 }
