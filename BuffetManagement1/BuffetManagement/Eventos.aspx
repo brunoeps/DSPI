@@ -3,6 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
+        <%--<div class="row justify-content-center">--%>
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
@@ -14,11 +15,10 @@
                 <p class="lead">Quantidade:</p>
                 <asp:TextBox runat="server" ID="txtQuantidade" CssClass="form-control" Text="0" OnTextChanged="txtQuantidade_TextChanged" AutoPostBack="true"></asp:TextBox>
                 <br />
-                <br />
-                <br />
 
                 <p class="lead">Valor:</p>
                 <asp:Label runat="server" ID="lblValor"></asp:Label>
+                <br />
 
                 <style>
                     .button {
@@ -44,5 +44,6 @@
                 <br />
             </div>
         </div>
+        <%--</div>--%>
     </div>
 </asp:Content>
