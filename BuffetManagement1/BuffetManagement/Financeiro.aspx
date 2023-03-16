@@ -39,6 +39,8 @@
                     <asp:Button runat="server" ID="btnCadastraGasto" Text="Cadastrar" Style="margin-right: 40px" CssClass="button" OnClick="btnCadastraGasto_Click" />
                     <asp:Button runat="server" ID="btnPesquisaGasto" Text="Pesquisar" Style="margin-right: 40px" CssClass="button" OnClick="btnPesquisaGasto_Click" />
                 </div>
+                <br />
+                <br />
                 <div class="row">
                     <asp:GridView runat="server" ID="grdFinanceiro" Width="100%" AutoGenerateColumns="false"
                         CssClass="table table-sm table-bordered table-condensed table-responsive-sm table-hover table-striped"

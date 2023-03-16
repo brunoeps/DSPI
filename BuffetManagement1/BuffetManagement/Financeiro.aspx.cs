@@ -33,6 +33,11 @@ namespace BuffetManagement
 
                 Negócio.Financeiro Acoesfinanceiro = new Negócio.Financeiro();
                 Acoesfinanceiro.Create(NovoLancamento);
+
+                SiteMaster.ExibirAlert(this, "Lançamento cadastrado com sucesso!");
+                txtFornecedor.Text = "";
+                txtValor.Text = "";
+                txtDataVencimento.Text = "";
             }
             catch (Exception er)
             {

@@ -20,7 +20,7 @@
                     <br />
                     <h4>Lançamentos em fev/23</h4>
                     <div class="progress-bar progress-bar-info" role="progressbar" style="width: 100%">
-                        <asp:Label runat="server" ID="lblFinanceiro" Text="R$"></asp:Label>
+                        <asp:Label runat="server" ID="lblFinanceiro" Text="0"></asp:Label>
                     </div>
                     <br />
                     <br />

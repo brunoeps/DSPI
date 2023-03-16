@@ -11,13 +11,13 @@
                 <p class="lead">Cliente:</p>
                 <asp:DropDownList runat="server" ID="ddlCliente" AutoPostBack="true" CssClass="form-control"></asp:DropDownList><br />
                 <p class="lead">Pacote:</p>
-                <asp:DropDownList runat="server" ID="ddlPacote" AutoPostBack="true" CssClass="form-control"></asp:DropDownList><br />
+                <asp:DropDownList runat="server" ID="ddlPacote" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="ddlPacote_SelectedIndexChanged"></asp:DropDownList><br />
                 <p class="lead">Quantidade:</p>
                 <asp:TextBox runat="server" ID="txtQuantidade" CssClass="form-control" Text="0" OnTextChanged="txtQuantidade_TextChanged" AutoPostBack="true"></asp:TextBox>
                 <br />
 
                 <p class="lead">Valor:</p>
-                <asp:Label runat="server" ID="lblValor"></asp:Label>
+                <asp:TextBox runat="server" ID="txtValor" CssClass="form-control" Enabled="false" AutoPostBack="true"></asp:TextBox>
                 <br />
 
                 <style>
