@@ -33,7 +33,7 @@ namespace BuffetManagement
             command = new MySqlCommand("SELECT SUM(valor) FROM financeiro WHERE MONTH(vencimento) = 2 AND YEAR(vencimento) = 2023", connection);
             reader = command.ExecuteReader();
             reader.Read();
-            lblFinanceiro.Text = reader.GetFloat(0).ToString();
+            lblFinanceiro.Text = reader.GetFloat(0).ToString("C");
             connection.Close();
 
         }

@@ -30,19 +30,17 @@ namespace BuffetManagement
 
                 connection.Open();
 
-                var reader1 = new MySqlCommand("SELECT nome from pacotes", connection).ExecuteReader();
-                while (reader1.Read())
+                reader = new MySqlCommand("SELECT nome from pacotes", connection).ExecuteReader();
+                while (reader.Read())
                 {
-                    ddlPacote.Items.Add(reader1.GetString(0));
+                    ddlPacote.Items.Add(reader.GetString(0));
                 }
 
                 connection.Close();
-
             }
 
+
         }
-
-
 
         protected void btnCadastraEvento_Click(object sender, EventArgs e)
         {
@@ -59,6 +57,21 @@ namespace BuffetManagement
 
         }
 
+        protected void ddlPacote_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            connection.Open();
+
+            var reader = new MySqlCommand("SELECT preco from pacotes where nome = @nome", connection);
+            reader.Parameters.AddWithValue("@nome", ddlPacote.Text); // substitua 'nomeDoPacote' pelo valor correto
+            var preco = (float)reader.ExecuteScalar(); // use ExecuteScalar para recuperar apenas um valor
+
+            int quantidade = Convert.ToInt32(txtQuantidade.Text);
+            float valorTotal = quantidade * preco;
+            txtValor.Text = valorTotal.ToString("C"); // exibe o valor formatado como moeda na label
+
+            connection.Close();
+        }
+
         protected void txtQuantidade_TextChanged(object sender, EventArgs e)
         {
             int value;
@@ -68,6 +81,21 @@ namespace BuffetManagement
                 Response.Write("<script>alert('Insira somente números inteiros');</script>");
                 txtQuantidade.Text = "";
             }
+            else
+            {
+                connection.Open();
+
+                var reader = new MySqlCommand("SELECT preco from pacotes where nome = @nome", connection);
+                reader.Parameters.AddWithValue("@nome", ddlPacote.Text); // substitua 'nomeDoPacote' pelo valor correto
+                var preco = (float)reader.ExecuteScalar(); // use ExecuteScalar para recuperar apenas um valor
+
+                int quantidade = Convert.ToInt32(txtQuantidade.Text);
+                float valorTotal = quantidade * preco;
+                txtValor.Text = valorTotal.ToString("C"); // exibe o valor formatado como moeda na label
+
+                connection.Close();
+            }
         }
+
     }
 }
