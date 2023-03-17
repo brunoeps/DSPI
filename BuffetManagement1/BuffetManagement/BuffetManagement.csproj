@@ -133,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Clientes.aspx" />
+    <Content Include="Contato.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -201,6 +202,13 @@
       <DependentUpon>Clientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contato.aspx.cs">
+      <DependentUpon>Contato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contato.aspx.designer.cs">
+      <DependentUpon>Contato.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -241,6 +249,7 @@
     <Compile Include="Modelo\Financeiro.cs" />
     <Compile Include="Modelo\Pacotes.cs" />
     <Compile Include="Negócio\Cliente.cs" />
+    <Compile Include="Negócio\Contato.cs" />
     <Compile Include="Negócio\Financeiro.cs" />
     <Compile Include="Negócio\Pacotes.cs" />
     <Compile Include="Eventos.aspx.cs">
