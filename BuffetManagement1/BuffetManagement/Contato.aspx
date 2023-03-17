@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contato.aspx.cs" Inherits="BuffetManagement.Contato" %>
+﻿<%@ Page Title="Contato" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contato.aspx.cs" Inherits="BuffetManagement.Contato" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
             <div class="col-sm-4"></div>
@@ -7,7 +7,7 @@
                 <p class="lead">Nome:</p>
                 <asp:TextBox runat="server" ID="txtNomeRemetente" CssClass="form-control"></asp:TextBox><br />
                 <p class="lead">Assunto:</p>
-                <asp:DropDownList runat="server" ID="ddlAsunto" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="ddlAsunto_SelectedIndexChanged">
+                <asp:DropDownList runat="server" ID="ddlAssunto" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="ddlAssunto_SelectedIndexChanged">
                 <asp:ListItem Text="" Value="1"/>
                 <asp:ListItem Text="Reclamação" Value="2" />
                 <asp:ListItem Text="Elogio" Value="3" />

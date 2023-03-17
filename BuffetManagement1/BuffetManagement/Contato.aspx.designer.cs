@@ -22,13 +22,13 @@ namespace BuffetManagement {
         protected global::System.Web.UI.WebControls.TextBox txtNomeRemetente;
         
         /// <summary>
-        /// Controle ddlAsunto.
+        /// Controle ddlAssunto.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAsunto;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAssunto;
         
         /// <summary>
         /// Controle txtAreaMensagem.

@@ -13,22 +13,28 @@ namespace BuffetManagement
         {
         }
 
-        protected void ddlAsunto_SelectedIndexChanged(object sender, EventArgs e)
+        protected void ddlAssunto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
 
             Negócio.Contato contato = new Negócio.Contato();
-            string mensagem = $@"Nome: {txtNomeRemetente.Text}<br>
-                              Assunto: {(ddlAsunto.SelectedItem.Text)}<br>
-                              Mensagem: {txtAreaMensagem.Value}<br>
-                              E-mail de contato: {txtEmailContato.Text}";                
-           
-           contato.Envio(ddlAsunto.SelectedItem.Text,mensagem);
-        
+            string mensagem = $@"Nome: {txtNomeRemetente.Text}
+Assunto: {(ddlAssunto.SelectedItem.Text)}
+Mensagem: {txtAreaMensagem.Value}
+E-mail de contato: {txtEmailContato.Text}";
+
+            contato.Envio(ddlAssunto.SelectedItem.Text, mensagem);
+
+            SiteMaster.ExibirAlert(this, "Mensagem enviada com sucesso!");
+            txtNomeRemetente.Text = "";
+            ddlAssunto.SelectedValue = "1";
+            txtAreaMensagem.InnerText = "";
+            txtEmailContato.Text = "";
+
         }
     }
 }
