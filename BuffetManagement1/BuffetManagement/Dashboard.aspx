@@ -18,18 +18,22 @@
                         <asp:Label runat="server" ID="lblPacotes" Text="0"></asp:Label>
                     </div>
                     <br />
-                    <h4>Lançamentos em fev/23</h4>
+                    <h4>Selecione a data do(s) lançamento(s)</h4>
                     <div class="progress-bar progress-bar-info" role="progressbar" style="width: 100%">
-                        <asp:Label runat="server" ID="lblFinanceiro" Text="0"></asp:Label>
                     </div>
                     <br />
                     <br />
-                    <asp:Calendar runat="server" ID="Calendar1"></asp:Calendar>
+
+                    <input type="date" id="dateInput" name="dateInput" runat="server" />
+                    <asp:Button ID="btnSubmit" runat="server" Text="Enviar" OnClick="btnSubmit_Click" />
+                    <br />
+                    <asp:Label runat="server" ID="lblFinanceiro" Text="0"></asp:Label>
 
                 </div>
             </div>
         </div>
     </div>
+    >
 
 
 

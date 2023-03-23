@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MySqlConnector;
 
+
 namespace BuffetManagement
 {
     public partial class Dashboard : System.Web.UI.Page
@@ -38,5 +39,38 @@ namespace BuffetManagement
 
         }
 
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            // Obtém a data selecionada no campo de entrada de data
+            string selectedDate = Request.Form["dateInput"];
+
+            // Converte a data selecionada para o formato desejado
+            DateTime date = Convert.ToDateTime(selectedDate);
+
+            connection.Open();
+            // Constrói a consulta SQL para buscar dados do banco de dados filtrando pela data selecionada
+            var command = new MySqlCommand ("SELECT `valor` FROM `financeiro` WHERE vencimento = '" + date.ToString("yyyy-MM-dd") + "'", connection);
+            var reader = command.ExecuteReader();
+            // Executa a consulta SQL e obtém os dados do banco de dados
+            // Aqui você precisaria usar o código apropriado para sua plataforma de banco de dados específica,
+            // por exemplo, usando um objeto SqlConnection no .NET Framework ou um objeto MySqlConnection no MySQL.
+            // O código a seguir é apenas um exemplo hipotético.
+
+            {
+
+               
+                // Faz algo com os dados retornados da consulta
+                // Por exemplo, exibe-os em uma grade ou em um rótulo
+                while (reader.Read())
+                {
+                    // Obtém o valor de uma coluna específica dos dados retornados
+                    string columnValue = reader.GetString(0);
+
+                    // Faz algo com o valor da coluna, por exemplo, exibe-o em um rótulo
+                    lblFinanceiro.Text = "Valor: " + columnValue;
+                    connection.Close();
+                }
+            }
+        }
     }
 }
