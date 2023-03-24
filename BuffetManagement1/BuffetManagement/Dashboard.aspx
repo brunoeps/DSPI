@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="BuffetManagement.Dashboard" %>
+﻿<%@ Page Title="Dashboard" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="BuffetManagement.Dashboard" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -21,22 +21,15 @@
                     <h4>Selecione a data do(s) lançamento(s)</h4>
                     <div class="progress-bar progress-bar-info" role="progressbar" style="width: 100%">
                     </div>
-                    <br />
-                    <br />
 
-                    <input type="date" id="dateInput" name="dateInput" runat="server" />
-                    <asp:Button ID="btnSubmit" runat="server" Text="Enviar" OnClick="btnSubmit_Click" />
+                    <asp:TextBox TextMode="Date" ID="data" runat="server" OnTextChanged="data_TextChanged" AutoPostBack="true"></asp:TextBox>
+
                     <br />
-                    <asp:Label runat="server" ID="lblFinanceiro" Text="0"></asp:Label>
+                    <asp:Label runat="server" ID="lblFinanceiro" Text="Valor: "></asp:Label>
 
                 </div>
             </div>
         </div>
     </div>
-    >
-
-
-
-
 
 </asp:Content>

@@ -31,22 +31,13 @@ namespace BuffetManagement {
         protected global::System.Web.UI.WebControls.Label lblPacotes;
         
         /// <summary>
-        /// Controle dateInput.
+        /// Controle data.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dateInput;
-        
-        /// <summary>
-        /// Controle btnSubmit.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.WebControls.TextBox data;
         
         /// <summary>
         /// Controle lblFinanceiro.
