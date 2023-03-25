@@ -34,17 +34,17 @@ namespace BuffetManagement
 
         protected void data_TextChanged(object sender, EventArgs e)
         {
-            string selectedDate = Request.Form["dateInput"];
+            string selectedDate = data.Text;
             DateTime date = Convert.ToDateTime(selectedDate);
             connection.Open();
 
             var command = new MySqlCommand("SELECT `valor` FROM `financeiro` WHERE vencimento = '" + date.ToString("yyyy-MM-dd") + "'", connection);
             var reader = command.ExecuteReader();
 
-            while (reader.Read())
+            if (reader.Read())
             {
-                string columnValue = reader.GetString(0);
-                lblFinanceiro.Text = "Valor: " + columnValue;
+                var columnValue = reader.GetDouble("valor");
+                lblFinanceiro.Text = "Valor: " + Convert.ToString(columnValue);
                 connection.Close();
             }
         }
