@@ -6,10 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MySqlConnector;
 
+
 namespace BuffetManagement
 {
     public partial class Dashboard : System.Web.UI.Page
     {
+
         private MySqlConnection connection;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,15 +30,23 @@ namespace BuffetManagement
             reader.Read();
             lblPacotes.Text = reader.GetInt16(0).ToString();
             connection.Close();
-
-            connection.Open();
-            command = new MySqlCommand("SELECT SUM(valor) FROM financeiro WHERE MONTH(vencimento) = 2 AND YEAR(vencimento) = 2023", connection);
-            reader = command.ExecuteReader();
-            reader.Read();
-            lblFinanceiro.Text = reader.GetFloat(0).ToString("C");
-            connection.Close();
-
         }
 
+        protected void data_TextChanged(object sender, EventArgs e)
+        {
+            string selectedDate = data.Text;
+            DateTime date = Convert.ToDateTime(selectedDate);
+            connection.Open();
+
+            var command = new MySqlCommand("SELECT `valor` FROM `financeiro` WHERE vencimento = '" + date.ToString("yyyy-MM-dd") + "'", connection);
+            var reader = command.ExecuteReader();
+
+            if (reader.Read())
+            {
+                var columnValue = reader.GetDouble("valor");
+                lblFinanceiro.Text = "Valor: " + Convert.ToString(columnValue);
+                connection.Close();
+            }
+        }
     }
 }
