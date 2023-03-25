@@ -42,8 +42,21 @@
                 </div>
                 <br />
                 <br />
+                 <div class="row">
+                    <asp:GridView runat="server" ID="grdEventos" Width="100%" AutoGenerateColumns="false"
+                        CssClass="table table-sm table-bordered table-condensed table-responsive-sm table-hover table-striped"
+                        OnRowCommand="grdEventos_RowCommand1" AllowPaging="true" PageSize="10" OnPageIndexChanging="grdEventos_PageIndexChanging">
+                        <Columns>
+                            <asp:BoundField DataField="Cliente.Nome" HeaderText="NOME DO CLIENTE" />
+                            <asp:BoundField DataField="fornecedor" HeaderText="FORNECEDOR" />
+                            <asp:BoundField DataField="valor" HeaderText="VALOR" />
+                            <asp:BoundField DataField="vencimento" HeaderText="VENCIMENTO" />
+                            <asp:ButtonField ButtonType="Link" CommandName="editar" ControlStyle-CssClass="btn btn-warning" Text="Editar" />
+                            <asp:ButtonField ButtonType="Link" CommandName="excluir" ControlStyle-CssClass="btn btn-danger" Text="Excluir" />
+                        </Columns>
+                    </asp:GridView>
+                </div>
             </div>
         </div>
-        <%--</div>--%>
     </div>
 </asp:Content>
