@@ -8,8 +8,11 @@ namespace BuffetManagement.Modelo
     public class Evento
     {
         public int Id { get; set; }
-        public string Cliente { get; set; }
-        public int Pacote { get; set; }
+        public int IdCliente { get; set; }
+        public Cliente Cliente { get; set; }
+        public int IdPacote { get; set; }
+        public Pacotes Pacotes { get; set; }
         public int Quantidade { get; set; }
+        public float Valor { get; set; }
     }
 }

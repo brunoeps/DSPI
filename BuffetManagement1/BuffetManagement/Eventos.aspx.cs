@@ -97,5 +97,14 @@ namespace BuffetManagement
             }
         }
 
+        protected void grdEventos_RowCommand1(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
+
+        protected void grdEventos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
     }
 }
