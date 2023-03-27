@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Pedidos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Eventos.aspx.cs" Inherits="BuffetManagement.Pedidos" %>
+﻿<%@ Page Title="Eventos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Eventos.aspx.cs" Inherits="BuffetManagement.Pedidos" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -9,13 +9,16 @@
             <div class="col-sm-4">
                 <h1>Eventos</h1>
                 <p class="lead">Cliente:</p>
-                <asp:DropDownList runat="server" ID="ddlCliente" AutoPostBack="true" CssClass="form-control"></asp:DropDownList><br />
+                <asp:DropDownList runat="server" ID="ddlCliente" AutoPostBack="true" CssClass="form-control">
+                    <%--<asp:ListItem Text="" Value="" />--%>
+                </asp:DropDownList><br />
                 <p class="lead">Pacote:</p>
-                <asp:DropDownList runat="server" ID="ddlPacote" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="ddlPacote_SelectedIndexChanged"></asp:DropDownList><br />
+                <asp:DropDownList runat="server" ID="ddlPacote" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="ddlPacote_SelectedIndexChanged">
+                    <%--<asp:ListItem Text="" Value="" />--%>
+                </asp:DropDownList><br />
                 <p class="lead">Quantidade:</p>
                 <asp:TextBox runat="server" ID="txtQuantidade" CssClass="form-control" Text="0" OnTextChanged="txtQuantidade_TextChanged" AutoPostBack="true"></asp:TextBox>
                 <br />
-
                 <p class="lead">Valor:</p>
                 <asp:TextBox runat="server" ID="txtValor" CssClass="form-control" Enabled="false" AutoPostBack="true"></asp:TextBox>
                 <br />
@@ -42,15 +45,15 @@
                 </div>
                 <br />
                 <br />
-                 <div class="row">
+                <div class="row">
                     <asp:GridView runat="server" ID="grdEventos" Width="100%" AutoGenerateColumns="false"
                         CssClass="table table-sm table-bordered table-condensed table-responsive-sm table-hover table-striped"
-                        OnRowCommand="grdEventos_RowCommand1" AllowPaging="true" PageSize="10" OnPageIndexChanging="grdEventos_PageIndexChanging">
+                        OnRowCommand="grdEventos_RowCommand" AllowPaging="true" PageSize="10" OnPageIndexChanging="grdEventos_PageIndexChanging">
                         <Columns>
-                            <asp:BoundField DataField="Cliente.Nome" HeaderText="NOME DO CLIENTE" />
-                            <asp:BoundField DataField="fornecedor" HeaderText="FORNECEDOR" />
+                            <asp:BoundField DataField="Cliente.Nome" HeaderText="CLIENTE" />
+                            <asp:BoundField DataField="Pacote.Nome" HeaderText="PACOTE" />
+                            <asp:BoundField DataField="quantidade" HeaderText="QUANTIDADE" />
                             <asp:BoundField DataField="valor" HeaderText="VALOR" />
-                            <asp:BoundField DataField="vencimento" HeaderText="VENCIMENTO" />
                             <asp:ButtonField ButtonType="Link" CommandName="editar" ControlStyle-CssClass="btn btn-warning" Text="Editar" />
                             <asp:ButtonField ButtonType="Link" CommandName="excluir" ControlStyle-CssClass="btn btn-danger" Text="Excluir" />
                         </Columns>

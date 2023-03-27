@@ -15,7 +15,6 @@ namespace BuffetManagement
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
-
             Negócio.Contato contato = new Negócio.Contato();
             string mensagem = $@"Nome: {txtNomeRemetente.Text}
 Mensagem: {txtAreaMensagem.Value}

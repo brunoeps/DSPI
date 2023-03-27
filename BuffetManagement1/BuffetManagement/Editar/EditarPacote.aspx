@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditarPacote.aspx.cs" Inherits="BuffetManagement.Editar.EditarPacote" %>
+﻿<%@ Page Title="Editar pacote" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditarPacote.aspx.cs" Inherits="BuffetManagement.Editar.EditarPacote" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
