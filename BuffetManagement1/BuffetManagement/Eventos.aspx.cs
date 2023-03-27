@@ -1,21 +1,21 @@
-﻿using System;
+﻿using MySqlConnector;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using MySqlConnector;
+using BuffetManagement.Modelo;
+using Serilog;
 
 namespace BuffetManagement
 {
     public partial class Pedidos : System.Web.UI.Page
     {
-
         private MySqlConnection connection;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             connection = new MySqlConnection(SiteMaster.ConnectionString);
             if (!IsPostBack)
             {
@@ -35,26 +35,91 @@ namespace BuffetManagement
                 {
                     ddlPacote.Items.Add(reader.GetString(0));
                 }
-
                 connection.Close();
             }
-
-
-        }
-
-        protected void btnCadastraEvento_Click(object sender, EventArgs e)
-        {
-
         }
 
         protected void btnPesquisaEvento_Click(object sender, EventArgs e)
         {
+            int idCliente;
+            int.TryParse(ddlCliente.Text, out idCliente);
 
+            int idPacotes;
+            int.TryParse(ddlPacote.Text, out idPacotes);
+
+            var evento = new Negócio.Evento().Read(idCliente, idPacotes, 0, txtValor.Text, Convert.ToInt32(txtQuantidade.Text));
+            Session["dados"] = evento;
+            grdEventos.DataSource = evento;
+            grdEventos.DataBind();
+        }
+
+        protected void btnCadastraEvento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Modelo.Evento NovoEvento = new Modelo.Evento();
+
+                //int idCliente = int.Parse(ddlCliente.SelectedValue);
+                //int idPacote = int.Parse(ddlPacote.SelectedValue);
+
+                //NovoEvento.IdCliente = idCliente;
+                //NovoEvento.IdPacote = idPacote;
+                //NovoEvento.Quantidade = int.Parse(txtQuantidade.Text);
+                //NovoEvento.Valor = float.Parse(txtValor.Text);
+
+                //Negócio.Evento AcoesEvento = new Negócio.Evento();
+                //AcoesEvento.Create(NovoEvento);
+
+                Modelo.Evento NovoEvento = new Modelo.Evento();
+
+                int idCliente, idPacote, quantidade;
+                float valor;
+
+                if (int.TryParse(ddlCliente.SelectedValue, out idCliente) &&
+                    int.TryParse(ddlPacote.SelectedValue, out idPacote) &&
+                    int.TryParse(txtQuantidade.Text, out quantidade) &&
+                    float.TryParse(txtValor.Text, out valor))
+                {
+                    NovoEvento.IdCliente = idCliente;
+                    NovoEvento.IdPacote = idPacote;
+                    NovoEvento.Quantidade = quantidade;
+                    NovoEvento.Valor = valor;
+
+                    Negócio.Evento AcoesEvento = new Negócio.Evento();
+                    AcoesEvento.Create(NovoEvento);
+                }
+
+                SiteMaster.ExibirAlert(this, "Evento cadastrado com sucesso!");
+                ddlCliente.Text = "";
+                ddlPacote.Text = "";
+                txtQuantidade.Text = "";
+                txtValor.Text = "";
+            }
+            catch (Exception er)
+            {
+                SiteMaster.ExibirAlert(this, "Erro no cadastro!");
+                Log.Error("Erro! " + er.Message);
+            }
         }
 
         protected void grdEventos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            int index = Convert.ToInt32(e.CommandArgument);
+            var evento = (List<Modelo.Evento>)Session["dados"];
 
+            if (e.CommandName == "excluir")
+            {
+                if (new Negócio.Financeiro().Delete(evento[index].Id))
+                    SiteMaster.ExibirAlert(this, "Evento excluído com sucesso!");
+                else
+                    SiteMaster.ExibirAlert(this, "O evento não pode ser excluído porque ele está sendo usado!");
+                btnPesquisaEvento_Click(null, null);
+            }
+
+            if (e.CommandName == "editar")
+            {
+                Response.Redirect("Editar/EditarEvento.aspx?id=" + evento[index].Id);
+            }
         }
 
         protected void ddlPacote_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,6 +146,7 @@ namespace BuffetManagement
                 Response.Write("<script>alert('Insira somente números inteiros');</script>");
                 txtQuantidade.Text = "";
             }
+
             else
             {
                 connection.Open();
@@ -97,14 +163,13 @@ namespace BuffetManagement
             }
         }
 
-        protected void grdEventos_RowCommand1(object sender, GridViewCommandEventArgs e)
-        {
-
-        }
-
         protected void grdEventos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            var evento = (List<Evento>)Session["dados"];
+            grdEventos.PageIndex = e.NewPageIndex;
+            grdEventos.DataSource = evento;
+            grdEventos.DataBind();
         }
+
     }
 }

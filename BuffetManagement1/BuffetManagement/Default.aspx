@@ -9,9 +9,6 @@
                 <h1>Agenda</h1>
                 <p class="lead">Confira os próximos eventos:</p>
             </div>
-
-            
-
         </div>
     </div>
 

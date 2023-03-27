@@ -140,6 +140,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Editar\EditarCliente.aspx" />
+    <Content Include="Editar\EditarEvento.aspx" />
     <Content Include="Editar\EditarFinanceiro.aspx" />
     <Content Include="Editar\EditarPacote.aspx" />
     <Content Include="Financeiro.aspx" />
@@ -223,6 +224,13 @@
     <Compile Include="Editar\EditarCliente.aspx.designer.cs">
       <DependentUpon>EditarCliente.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Editar\EditarEvento.aspx.cs">
+      <DependentUpon>EditarEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editar\EditarEvento.aspx.designer.cs">
+      <DependentUpon>EditarEvento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Editar\EditarFinanceiro.aspx.cs">
       <DependentUpon>EditarFinanceiro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -302,7 +310,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="CrudCliente\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

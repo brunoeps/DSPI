@@ -89,5 +89,43 @@ namespace BuffetManagement.Negócio
             catch (Exception erro) { }
             return packs;
         }
+        public bool Update(Modelo.Evento evento)
+        {
+            try
+            {
+                connection.Open();
+                var comando = new MySqlCommand($@"UPDATE eventos SET cliente = @cliente, pacote = @pacote, quantidade = @quantidade, valor = @valor WHERE id = @id", connection);
+                comando.Parameters.Add(new MySqlParameter("cliente", evento.Cliente));
+                comando.Parameters.Add(new MySqlParameter("pacote", evento.Pacotes));
+                comando.Parameters.Add(new MySqlParameter("quantidade", evento.Quantidade));
+                comando.Parameters.Add(new MySqlParameter("valor", evento.Valor));
+                comando.Parameters.Add(new MySqlParameter("id", evento.Id));
+                comando.ExecuteNonQuery();
+                connection.Close();
+            }
+
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool Delete(int id)
+        {
+            try
+            {
+                connection.Open();
+                var comando = new MySqlCommand("DELETE FROM eventos WHERE id = " + id, connection);
+                comando.ExecuteNonQuery();
+                connection.Close();
+            }
+
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
