@@ -40,7 +40,7 @@
                 </style>
 
                 <div style="display: flex; justify-content: center; align-items: center;">
-                    <asp:Button runat="server" ID="btnCadastraEvento" Text="Cadastrar" Style="margin-right: 40px" class="button" OnClick="btnCadastraEvento_Click" />
+                    <asp:Button runat="server" ID="btnCadastraEvento" Text="Cadastrar" Style="margin-right: 40px" Enabled="false" class="button" OnClick="btnCadastraEvento_Click" />
                     <asp:Button runat="server" ID="btnPesquisaEvento" Text="Pesquisar" Style="margin-right: 40px" class="button" OnClick="btnPesquisaEvento_Click" />
                 </div>
                 <br />

@@ -38,12 +38,12 @@ namespace BuffetManagement
             DateTime date = Convert.ToDateTime(selectedDate);
             connection.Open();
 
-            var command = new MySqlCommand("SELECT `valor` FROM `financeiro` WHERE vencimento = '" + date.ToString("yyyy-MM-dd") + "'", connection);
+            var command = new MySqlCommand("SELECT SUM(`valor`) valor FROM `financeiro` WHERE `vencimento` = '" + date.ToString("yyyy-MM-dd") + "'", connection);
             var reader = command.ExecuteReader();
 
             if (reader.Read())
             {
-                var columnValue = reader.GetDouble("valor");
+                var columnValue = reader.GetFloat("valor");
                 lblFinanceiro.Text = "Valor: " + Convert.ToString(columnValue);
                 connection.Close();
             }
