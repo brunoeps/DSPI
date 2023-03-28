@@ -20,22 +20,24 @@ namespace BuffetManagement
             if (!IsPostBack)
             {
                 connection.Open();
-                var reader = new MySqlCommand("SELECT nome from clientes", connection).ExecuteReader();
+                var reader = new MySqlCommand("SELECT nome, id from clientes", connection).ExecuteReader();
                 while (reader.Read())
                 {
-                    ddlCliente.Items.Add(reader.GetString(0));
+                    ddlCliente.Items.Add(new ListItem(reader.GetString(0), reader.GetInt32(1).ToString()));
                 }
 
                 connection.Close();
 
                 connection.Open();
 
-                reader = new MySqlCommand("SELECT nome from pacotes", connection).ExecuteReader();
+                reader = new MySqlCommand("SELECT nome, id from pacotes", connection).ExecuteReader();
                 while (reader.Read())
                 {
-                    ddlPacote.Items.Add(reader.GetString(0));
+                    ddlPacote.Items.Add(new ListItem(reader.GetString(0), reader.GetInt32(1).ToString()));
                 }
                 connection.Close();
+
+
             }
         }
 
@@ -57,37 +59,15 @@ namespace BuffetManagement
         {
             try
             {
-                //Modelo.Evento NovoEvento = new Modelo.Evento();
-
-                //int idCliente = int.Parse(ddlCliente.SelectedValue);
-                //int idPacote = int.Parse(ddlPacote.SelectedValue);
-
-                //NovoEvento.IdCliente = idCliente;
-                //NovoEvento.IdPacote = idPacote;
-                //NovoEvento.Quantidade = int.Parse(txtQuantidade.Text);
-                //NovoEvento.Valor = float.Parse(txtValor.Text);
-
-                //Negócio.Evento AcoesEvento = new Negócio.Evento();
-                //AcoesEvento.Create(NovoEvento);
-
                 Modelo.Evento NovoEvento = new Modelo.Evento();
+                NovoEvento.IdCliente = Convert.ToInt32(ddlCliente.SelectedValue);
+                NovoEvento.IdPacote = Convert.ToInt32(ddlPacote.SelectedValue);
+                NovoEvento.Id = Convert.ToInt32(Request.QueryString["Id"].ToString());
+                NovoEvento.Valor = float.Parse(txtValor.Text);
+                NovoEvento.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
-                int idCliente, idPacote, quantidade;
-                float valor;
-
-                if (int.TryParse(ddlCliente.SelectedValue, out idCliente) &&
-                    int.TryParse(ddlPacote.SelectedValue, out idPacote) &&
-                    int.TryParse(txtQuantidade.Text, out quantidade) &&
-                    float.TryParse(txtValor.Text, out valor))
-                {
-                    NovoEvento.IdCliente = idCliente;
-                    NovoEvento.IdPacote = idPacote;
-                    NovoEvento.Quantidade = quantidade;
-                    NovoEvento.Valor = valor;
-
-                    Negócio.Evento AcoesEvento = new Negócio.Evento();
-                    AcoesEvento.Create(NovoEvento);
-                }
+                Negócio.Evento AcoesEvento = new Negócio.Evento();
+                AcoesEvento.Create(NovoEvento);
 
                 SiteMaster.ExibirAlert(this, "Evento cadastrado com sucesso!");
                 ddlCliente.Text = "";
@@ -101,6 +81,7 @@ namespace BuffetManagement
                 Log.Error("Erro! " + er.Message);
             }
         }
+
 
         protected void grdEventos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -126,9 +107,11 @@ namespace BuffetManagement
         {
             connection.Open();
 
-            var reader = new MySqlCommand("SELECT preco from pacotes where nome = @nome", connection);
-            reader.Parameters.AddWithValue("@nome", ddlPacote.Text); // substitua 'nomeDoPacote' pelo valor correto
-            var preco = (float)reader.ExecuteScalar(); // use ExecuteScalar para recuperar apenas um valor
+            var comando = new MySqlCommand("SELECT preco from pacotes where id = @id", connection);
+            comando.Parameters.AddWithValue("@id", ddlPacote.SelectedValue);
+            var reader = comando.ExecuteReader();
+            reader.Read();
+            var preco = reader.GetFloat("preco");
 
             int quantidade = Convert.ToInt32(txtQuantidade.Text);
             float valorTotal = quantidade * preco;
@@ -145,21 +128,29 @@ namespace BuffetManagement
                 // Se o valor inserido não for um número inteiro, exibe uma mensagem de erro.
                 Response.Write("<script>alert('Insira somente números inteiros');</script>");
                 txtQuantidade.Text = "";
+
             }
 
             else
             {
                 connection.Open();
 
-                var reader = new MySqlCommand("SELECT preco from pacotes where nome = @nome", connection);
-                reader.Parameters.AddWithValue("@nome", ddlPacote.Text); // substitua 'nomeDoPacote' pelo valor correto
-                var preco = (float)reader.ExecuteScalar(); // use ExecuteScalar para recuperar apenas um valor
-
+                var comando = new MySqlCommand("SELECT preco from pacotes where id = @id", connection);
+                comando.Parameters.AddWithValue("@id", ddlPacote.SelectedValue);
+                var reader = comando.ExecuteReader();
+                reader.Read();
+                var preco = reader.GetFloat("preco");
                 int quantidade = Convert.ToInt32(txtQuantidade.Text);
                 float valorTotal = quantidade * preco;
+
                 txtValor.Text = valorTotal.ToString("C"); // exibe o valor formatado como moeda na label
 
                 connection.Close();
+            }
+
+            if (Convert.ToInt32(txtQuantidade.Text) > 0)
+            {
+                btnCadastraEvento.Enabled = true;
             }
         }
 
