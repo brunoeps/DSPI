@@ -36,8 +36,6 @@ namespace BuffetManagement
                     ddlPacote.Items.Add(new ListItem(reader.GetString(0), reader.GetInt32(1).ToString()));
                 }
                 connection.Close();
-
-
             }
         }
 
@@ -62,16 +60,17 @@ namespace BuffetManagement
                 Modelo.Evento NovoEvento = new Modelo.Evento();
                 NovoEvento.IdCliente = Convert.ToInt32(ddlCliente.SelectedValue);
                 NovoEvento.IdPacote = Convert.ToInt32(ddlPacote.SelectedValue);
-                NovoEvento.Id = Convert.ToInt32(Request.QueryString["Id"].ToString());
-                NovoEvento.Valor = float.Parse(txtValor.Text);
+                NovoEvento.Valor = float.Parse(txtValor.Text
+                                                       .Replace("R$", "")
+                                                       .Replace(" ", ""));
                 NovoEvento.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
                 Negócio.Evento AcoesEvento = new Negócio.Evento();
                 AcoesEvento.Create(NovoEvento);
 
                 SiteMaster.ExibirAlert(this, "Evento cadastrado com sucesso!");
-                ddlCliente.Text = "";
-                ddlPacote.Text = "";
+                ddlCliente.SelectedIndex = 0;
+                ddlPacote.SelectedIndex = 0;
                 txtQuantidade.Text = "";
                 txtValor.Text = "";
             }
@@ -90,7 +89,7 @@ namespace BuffetManagement
 
             if (e.CommandName == "excluir")
             {
-                if (new Negócio.Financeiro().Delete(evento[index].Id))
+                if (new Negócio.Evento().Delete(evento[index].Id))
                     SiteMaster.ExibirAlert(this, "Evento excluído com sucesso!");
                 else
                     SiteMaster.ExibirAlert(this, "O evento não pode ser excluído porque ele está sendo usado!");

@@ -19,7 +19,7 @@ namespace BuffetManagement.Negócio
             try
             {
                 connection.Open();
-                var comando = new MySqlCommand($@"INSERT INTO evento (id_cliente, id_pacotes, quantidade, valor) VALUES (@id_cliente, @id_pacotes, @quantidade, @valor)", connection);
+                var comando = new MySqlCommand($@"INSERT INTO eventos (id_cliente, id_pacotes, quantidade, valor) VALUES (@id_cliente, @id_pacotes, @quantidade, @valor)", connection);
                 comando.Parameters.Add(new MySqlParameter("id_cliente", evento.IdCliente));
                 comando.Parameters.Add(new MySqlParameter("id_pacotes", evento.IdPacote));
                 comando.Parameters.Add(new MySqlParameter("quantidade", evento.Quantidade));
@@ -43,31 +43,31 @@ namespace BuffetManagement.Negócio
                 var comando = new MySqlCommand("select * from eventos WHERE (1=1) ", connection);
                 if (id_cliente.Equals("") == false)
                 {
-                    comando.CommandText += $"and id_cliente LIKE @id_cliente";
+                    comando.CommandText += $" and id_cliente LIKE @id_cliente";
                     comando.Parameters.Add(new MySqlParameter("id_cliente", id_cliente));
                 }
 
                 if (id_pacotes.Equals("") == false)
                 {
-                    comando.CommandText += $"and id_pacotes LIKE @id_pacotes";
+                    comando.CommandText += $" and id_pacotes LIKE @id_pacotes";
                     comando.Parameters.Add(new MySqlParameter("id_pacotes", id_pacotes));
                 }
 
                 if (id != 0)
                 {
-                    comando.CommandText += $"and id = @id";
+                    comando.CommandText += $" and id = @id";
                     comando.Parameters.Add(new MySqlParameter("id", id));
                 }
 
                 if (valor.Equals("") == false)
                 {
-                    comando.CommandText += $"and valor = @valor";
+                    comando.CommandText += $" and valor = @valor";
                     comando.Parameters.Add(new MySqlParameter("valor", valor));
                 }
 
-                if (quantidade.Equals("") == false)
+                if (quantidade > 0)
                 {
-                    comando.CommandText += $"and quantidade = @quantidade";
+                    comando.CommandText += $" and quantidade = @quantidade";
                     comando.Parameters.Add(new MySqlParameter("quantidade", quantidade));
                 }
 
@@ -75,9 +75,9 @@ namespace BuffetManagement.Negócio
                 while (reader.Read())
                 {
                     var evento = new Modelo.Evento();
-                    evento.IdCliente = reader.GetInt32("idcliente");
+                    evento.IdCliente = reader.GetInt32("id_cliente");
                     evento.Cliente = new Negócio.Cliente().Read("", "", "", evento.IdCliente).FirstOrDefault();
-                    evento.IdPacote = reader.GetInt32("idpacote");
+                    evento.IdPacote = reader.GetInt32("id_pacotes");
                     evento.Pacotes = new Negócio.Pacotes().Read("", "", evento.IdPacote).FirstOrDefault();
                     evento.Id = reader.GetInt32("id");
                     evento.Valor = reader.GetFloat("valor");
@@ -86,7 +86,9 @@ namespace BuffetManagement.Negócio
                 }
                 connection.Close();
             }
-            catch (Exception erro) { }
+            catch (Exception erro)
+            {
+            }
             return packs;
         }
         public bool Update(Modelo.Evento evento)

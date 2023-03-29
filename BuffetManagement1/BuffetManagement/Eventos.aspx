@@ -51,7 +51,7 @@
                         OnRowCommand="grdEventos_RowCommand" AllowPaging="true" PageSize="10" OnPageIndexChanging="grdEventos_PageIndexChanging">
                         <Columns>
                             <asp:BoundField DataField="Cliente.Nome" HeaderText="CLIENTE" />
-                            <asp:BoundField DataField="Pacote.Nome" HeaderText="PACOTE" />
+                            <asp:BoundField DataField="Pacotes.Nome" HeaderText="PACOTE" />
                             <asp:BoundField DataField="quantidade" HeaderText="QUANTIDADE" />
                             <asp:BoundField DataField="valor" HeaderText="VALOR" />
                             <asp:ButtonField ButtonType="Link" CommandName="editar" ControlStyle-CssClass="btn btn-warning" Text="Editar" />
