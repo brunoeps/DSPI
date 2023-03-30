@@ -16,12 +16,13 @@ namespace BuffetManagement.Editar
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            connection = new MySqlConnection(SiteMaster.ConnectionString);
             if (IsPostBack == false)
             {
                 connection.Open();
                 string Id = Request.QueryString["Id"].ToString();
                 var evento = new Negócio.Evento().Read(0, 0, Convert.ToInt32(Id), "", 0);
-                connection.Open();
+
                 var reader = new MySqlCommand("SELECT nome, id from clientes", connection).ExecuteReader();
                 while (reader.Read())
                 {
@@ -41,18 +42,7 @@ namespace BuffetManagement.Editar
             }
         }
 
-        protected void btnEditar_Click(object sender, EventArgs e)
-        {
-            Modelo.Evento EditaEvento = new Modelo.Evento();
-            EditaEvento.IdCliente = Convert.ToInt32(ddlCliente.SelectedValue);
-            EditaEvento.IdPacote = Convert.ToInt32(ddlPacote.SelectedValue);
-            EditaEvento.Id = Convert.ToInt32(Request.QueryString["Id"].ToString());
-            EditaEvento.Valor = float.Parse(txtValor.Text);
-            EditaEvento.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
-            Negócio.Evento AcoesEvento = new Negócio.Evento();
-            AcoesEvento.Update(EditaEvento);
-        }
 
         protected void ddlPacote_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -103,6 +93,21 @@ namespace BuffetManagement.Editar
             {
                 btnEditar.Enabled = true;
             }
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            Modelo.Evento EditaEvento = new Modelo.Evento();
+            EditaEvento.IdCliente = Convert.ToInt32(ddlCliente.SelectedValue);
+            EditaEvento.IdPacote = Convert.ToInt32(ddlPacote.SelectedValue);
+            EditaEvento.Id = Convert.ToInt32(Request.QueryString["Id"].ToString());
+            EditaEvento.Quantidade = Convert.ToInt32(txtQuantidade.Text);
+            EditaEvento.Valor = float.Parse(txtValor.Text.Replace("R$", "").Replace(" ", ""));
+
+            Negócio.Evento AcoesEvento = new Negócio.Evento();
+            AcoesEvento.Update(EditaEvento);
+
+            SiteMaster.ExibirAlert(this, "Alterado com sucesso", "../Eventos.aspx");
         }
     }
 }

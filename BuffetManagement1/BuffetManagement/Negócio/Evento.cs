@@ -96,9 +96,9 @@ namespace BuffetManagement.Negócio
             try
             {
                 connection.Open();
-                var comando = new MySqlCommand($@"UPDATE eventos SET cliente = @cliente, pacote = @pacote, quantidade = @quantidade, valor = @valor WHERE id = @id", connection);
-                comando.Parameters.Add(new MySqlParameter("cliente", evento.Cliente));
-                comando.Parameters.Add(new MySqlParameter("pacote", evento.Pacotes));
+                var comando = new MySqlCommand($@"UPDATE eventos SET id_cliente = @id_cliente, id_pacote = @id_pacote, quantidade = @quantidade, valor = @valor WHERE id = @id", connection);
+                comando.Parameters.Add(new MySqlParameter("id_cliente", evento.Cliente));
+                comando.Parameters.Add(new MySqlParameter("id_pacote", evento.Pacotes));
                 comando.Parameters.Add(new MySqlParameter("quantidade", evento.Quantidade));
                 comando.Parameters.Add(new MySqlParameter("valor", evento.Valor));
                 comando.Parameters.Add(new MySqlParameter("id", evento.Id));
@@ -106,7 +106,7 @@ namespace BuffetManagement.Negócio
                 connection.Close();
             }
 
-            catch
+            catch(Exception err)
             {
                 return false;
             }
