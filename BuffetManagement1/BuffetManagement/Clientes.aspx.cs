@@ -19,25 +19,32 @@ namespace BuffetManagement
 
         protected void btnCadastraCliente_Click(object sender, EventArgs e)
         {
-            try
+            if (txtCPFCliente.Text == "" || txtNomeCliente.Text == "" || txtTelefoneCliente.Text == "")
             {
-                Modelo.Cliente NovoCliente = new Modelo.Cliente();
-                NovoCliente.Nome = txtNomeCliente.Text;
-                NovoCliente.Cpf = txtCPFCliente.Text;
-                NovoCliente.Telefone = txtTelefoneCliente.Text;
-
-                Negócio.Cliente AcoesCliente = new Negócio.Cliente();
-                AcoesCliente.Create(NovoCliente);
-
-                SiteMaster.ExibirAlert(this, "Cliente cadastrado com sucesso!");
-                txtNomeCliente.Text = "";
-                txtCPFCliente.Text = "";
-                txtTelefoneCliente.Text = "";
+                SiteMaster.ExibirAlert(this, "Preencha todos os campos");
             }
-            catch (Exception er)
+            else
             {
-                SiteMaster.ExibirAlert(this, "Erro no cadastro!");
-                Log.Error("Erro! " + er.Message);
+                try
+                {
+                    Modelo.Cliente NovoCliente = new Modelo.Cliente();
+                    NovoCliente.Nome = txtNomeCliente.Text;
+                    NovoCliente.Cpf = txtCPFCliente.Text;
+                    NovoCliente.Telefone = txtTelefoneCliente.Text;
+
+                    Negócio.Cliente AcoesCliente = new Negócio.Cliente();
+                    AcoesCliente.Create(NovoCliente);
+
+                    SiteMaster.ExibirAlert(this, "Cliente cadastrado com sucesso!");
+                    txtNomeCliente.Text = "";
+                    txtCPFCliente.Text = "";
+                    txtTelefoneCliente.Text = "";
+                }
+                catch (Exception er)
+                {
+                    SiteMaster.ExibirAlert(this, "Erro no cadastro!");
+                    Log.Error("Erro! " + er.Message);
+                }
             }
         }
 

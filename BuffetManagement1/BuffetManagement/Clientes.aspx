@@ -10,9 +10,9 @@
                 <p class="lead">Nome:</p>
                 <asp:TextBox runat="server" ID="txtNomeCliente" CssClass="form-control" placeholder="Insira o nome do cliente"></asp:TextBox><br />
                 <p class="lead">CPF:</p>
-                <asp:TextBox runat="server" ID="txtCPFCliente" CssClass="form-control" placeholder="Insira o CPF do cliente"></asp:TextBox><br />
+                <asp:TextBox runat="server" ID="txtCPFCliente" CssClass="form-control" placeholder="Insira o CPF do cliente (apenas números)" ></asp:TextBox><br />
                 <p class="lead">Telefone:</p>
-                <asp:TextBox runat="server" ID="txtTelefoneCliente" CssClass="form-control" placeholder="Insira o telefone do cliente"></asp:TextBox><br />
+                <asp:TextBox runat="server" ID="txtTelefoneCliente" CssClass="form-control" placeholder="Insira o telefone do cliente (apenas números)"></asp:TextBox><br />
                 <br />
 
                 <style>

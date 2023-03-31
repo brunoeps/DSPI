@@ -19,11 +19,13 @@ namespace BuffetManagement.Negócio
             try
             {
                 connection.Open();
-                var comando = new MySqlCommand($@"INSERT INTO eventos (id_cliente, id_pacotes, quantidade, valor) VALUES (@id_cliente, @id_pacotes, @quantidade, @valor)", connection);
+                var comando = new MySqlCommand($@"INSERT INTO eventos (id_cliente, id_pacotes, quantidade, valor, data_evento, observacao) VALUES (@id_cliente, @id_pacotes, @quantidade, @valor, @data_evento, @observacao)", connection);
                 comando.Parameters.Add(new MySqlParameter("id_cliente", evento.IdCliente));
                 comando.Parameters.Add(new MySqlParameter("id_pacotes", evento.IdPacote));
                 comando.Parameters.Add(new MySqlParameter("quantidade", evento.Quantidade));
                 comando.Parameters.Add(new MySqlParameter("valor", evento.Valor));
+                comando.Parameters.Add(new MySqlParameter("data_evento", evento.Data_evento));
+                comando.Parameters.Add(new MySqlParameter("observacao", evento.Observacao));
                 comando.ExecuteNonQuery();
                 connection.Close();
                 return true;
@@ -34,7 +36,7 @@ namespace BuffetManagement.Negócio
             }
 
         }
-        public List<Modelo.Evento> Read(int id_cliente, int id_pacotes, int id, string valor, int quantidade)
+        public List<Modelo.Evento> Read(int id_cliente, int id_pacotes, int id, string valor, int quantidade, string data_evento, string observacao)
         {
             var packs = new List<Modelo.Evento>();
             try
@@ -71,6 +73,17 @@ namespace BuffetManagement.Negócio
                     comando.Parameters.Add(new MySqlParameter("quantidade", quantidade));
                 }
 
+                if (data_evento.Equals("") == false)
+                {
+                    comando.CommandText += $"and data_evento = @data_evento";
+                    comando.Parameters.Add(new MySqlParameter("data_evento", data_evento));
+                }
+                if (observacao.Equals("") == false)
+                {
+                    comando.CommandText += $"and observacao LIKE @observacao";
+                    comando.Parameters.Add(new MySqlParameter("observacao", $"%{observacao}%"));
+                }
+
                 var reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
@@ -82,6 +95,9 @@ namespace BuffetManagement.Negócio
                     evento.Id = reader.GetInt32("id");
                     evento.Valor = reader.GetFloat("valor");
                     evento.Quantidade = reader.GetInt32("quantidade");
+                    evento.Data_evento = reader.GetDateTime("data_vencimento");
+                    evento.Observacao = reader.GetString("observacao");
+
                     packs.Add(evento);
                 }
                 connection.Close();
@@ -96,11 +112,13 @@ namespace BuffetManagement.Negócio
             try
             {
                 connection.Open();
-                var comando = new MySqlCommand($@"UPDATE eventos SET id_cliente = @id_cliente, id_pacote = @id_pacote, quantidade = @quantidade, valor = @valor WHERE id = @id", connection);
-                comando.Parameters.Add(new MySqlParameter("id_cliente", evento.Cliente));
-                comando.Parameters.Add(new MySqlParameter("id_pacote", evento.Pacotes));
+                var comando = new MySqlCommand($@"UPDATE eventos SET id_cliente = @id_cliente, id_pacotes = @id_pacotes, quantidade = @quantidade, valor = @valor, data_evento = @data_evento, observacao = @observacao WHERE id = @id", connection);
+                comando.Parameters.Add(new MySqlParameter("id_cliente", evento.IdCliente));
+                comando.Parameters.Add(new MySqlParameter("id_pacotes", evento.IdPacote));
                 comando.Parameters.Add(new MySqlParameter("quantidade", evento.Quantidade));
-                comando.Parameters.Add(new MySqlParameter("valor", evento.Valor));
+                comando.Parameters.Add(new MySqlParameter("valor", evento.Valor));                
+                comando.Parameters.Add(new MySqlParameter("data_evento", evento.Data_evento));
+                comando.Parameters.Add(new MySqlParameter("observacao", evento.Observacao));
                 comando.Parameters.Add(new MySqlParameter("id", evento.Id));
                 comando.ExecuteNonQuery();
                 connection.Close();

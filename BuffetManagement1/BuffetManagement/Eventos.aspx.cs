@@ -47,10 +47,15 @@ namespace BuffetManagement
             int idPacotes;
             int.TryParse(ddlPacote.Text, out idPacotes);
 
-            var evento = new Negócio.Evento().Read(idCliente, idPacotes, 0, txtValor.Text, Convert.ToInt32(txtQuantidade.Text));
+            var evento = new Negócio.Evento().Read(idCliente, idPacotes, 0, txtValor.Text, Convert.ToInt32(txtQuantidade.Text), txtDataEvento.Text, txtObservacao.Value);
             Session["dados"] = evento;
             grdEventos.DataSource = evento;
             grdEventos.DataBind();
+
+            if (evento.Count == 0)
+            {
+                SiteMaster.ExibirAlert(this, "Evento não encontrado! Verifique os campos cliente e pacote.");
+            }           
         }
 
         protected void btnCadastraEvento_Click(object sender, EventArgs e)
@@ -64,6 +69,8 @@ namespace BuffetManagement
                                                        .Replace("R$", "")
                                                        .Replace(" ", ""));
                 NovoEvento.Quantidade = Convert.ToInt32(txtQuantidade.Text);
+                NovoEvento.Data_evento = Convert.ToDateTime(txtDataEvento.Text);
+                NovoEvento.Observacao = txtObservacao.Value;
 
                 Negócio.Evento AcoesEvento = new Negócio.Evento();
                 AcoesEvento.Create(NovoEvento);
@@ -73,6 +80,8 @@ namespace BuffetManagement
                 ddlPacote.SelectedIndex = 0;
                 txtQuantidade.Text = "";
                 txtValor.Text = "";
+                txtDataEvento.Text = "";
+                txtObservacao.Value = "";
             }
             catch (Exception er)
             {

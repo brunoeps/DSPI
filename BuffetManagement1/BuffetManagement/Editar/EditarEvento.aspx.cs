@@ -21,7 +21,7 @@ namespace BuffetManagement.Editar
             {
                 connection.Open();
                 string Id = Request.QueryString["Id"].ToString();
-                var evento = new Negócio.Evento().Read(0, 0, Convert.ToInt32(Id), "", 0);
+                var evento = new Negócio.Evento().Read(0, 0, Convert.ToInt32(Id), "", 0, "", "");
 
                 var reader = new MySqlCommand("SELECT nome, id from clientes", connection).ExecuteReader();
                 while (reader.Read())

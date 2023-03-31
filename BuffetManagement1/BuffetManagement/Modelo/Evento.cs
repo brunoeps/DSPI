@@ -14,5 +14,7 @@ namespace BuffetManagement.Modelo
         public Pacotes Pacotes { get; set; }
         public int Quantidade { get; set; }
         public float Valor { get; set; }
+        public string Observacao { get; set; }
+        public DateTime Data_evento { get; set; }
     }
 }
