@@ -24,25 +24,32 @@ namespace BuffetManagement
 
         protected void btnCadastraGasto_Click(object sender, EventArgs e)
         {
-            try
+            if (txtFornecedor.Text == "" || txtValor.Text == "" || txtDataVencimento.Text == "")
             {
-                Modelo.Financeiro NovoLancamento = new Modelo.Financeiro();
-                NovoLancamento.Fornecedor = txtFornecedor.Text;
-                NovoLancamento.Valor = float.Parse(txtValor.Text);
-                NovoLancamento.Vencimento = Convert.ToDateTime(txtDataVencimento.Text);
-
-                Negócio.Financeiro Acoesfinanceiro = new Negócio.Financeiro();
-                Acoesfinanceiro.Create(NovoLancamento);
-
-                SiteMaster.ExibirAlert(this, "Lançamento cadastrado com sucesso!");
-                txtFornecedor.Text = "";
-                txtValor.Text = "";
-                txtDataVencimento.Text = "";
+                SiteMaster.ExibirAlert(this, "Preencha todos os campos");
             }
-            catch (Exception er)
+            else
             {
-                SiteMaster.ExibirAlert(this, "Erro no lançamento!");
-                Log.Error("Erro! " + er.Message);
+                try
+                {
+                    Modelo.Financeiro NovoLancamento = new Modelo.Financeiro();
+                    NovoLancamento.Fornecedor = txtFornecedor.Text;
+                    NovoLancamento.Valor = float.Parse(txtValor.Text);
+                    NovoLancamento.Vencimento = Convert.ToDateTime(txtDataVencimento.Text);
+
+                    Negócio.Financeiro Acoesfinanceiro = new Negócio.Financeiro();
+                    Acoesfinanceiro.Create(NovoLancamento);
+
+                    SiteMaster.ExibirAlert(this, "Lançamento cadastrado com sucesso!");
+                    txtFornecedor.Text = "";
+                    txtValor.Text = "";
+                    txtDataVencimento.Text = "";
+                }
+                catch (Exception er)
+                {
+                    SiteMaster.ExibirAlert(this, "Erro no lançamento!");
+                    Log.Error("Erro! " + er.Message);
+                }
             }
         }
 

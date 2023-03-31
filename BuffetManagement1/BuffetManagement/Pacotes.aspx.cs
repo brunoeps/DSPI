@@ -17,24 +17,31 @@ namespace BuffetManagement
 
         protected void btnCadastraPacote_Click(object sender, EventArgs e)
         {
-            try
+            if (txtNomePacote.Text == "" || txtPrecoPorPessoa.Text == "")
             {
-
-                Modelo.Pacotes NovoPacote = new Modelo.Pacotes();
-                NovoPacote.Nome = txtNomePacote.Text;
-                NovoPacote.PrecoPP = float.Parse(txtPrecoPorPessoa.Text);
-
-                Negócio.Pacotes AcoesPacotes = new Negócio.Pacotes();
-                AcoesPacotes.Create(NovoPacote);
-
-                SiteMaster.ExibirAlert(this, "Pacote cadastrado com sucesso!");
-                txtNomePacote.Text = "";
-                txtPrecoPorPessoa.Text = "";
-
+                SiteMaster.ExibirAlert(this, "Preencha todos os campos");
             }
-            catch (Exception er)
+            else
             {
-                SiteMaster.ExibirAlert(this, "Erro no cadastro!");
+                try
+                {
+
+                    Modelo.Pacotes NovoPacote = new Modelo.Pacotes();
+                    NovoPacote.Nome = txtNomePacote.Text;
+                    NovoPacote.PrecoPP = float.Parse(txtPrecoPorPessoa.Text);
+
+                    Negócio.Pacotes AcoesPacotes = new Negócio.Pacotes();
+                    AcoesPacotes.Create(NovoPacote);
+
+                    SiteMaster.ExibirAlert(this, "Pacote cadastrado com sucesso!");
+                    txtNomePacote.Text = "";
+                    txtPrecoPorPessoa.Text = "";
+
+                }
+                catch (Exception er)
+                {
+                    SiteMaster.ExibirAlert(this, "Erro no cadastro!");
+                }
             }
         }
 
