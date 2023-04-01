@@ -43,13 +43,13 @@ namespace BuffetManagement.Negócio
             {
                 connection.Open();
                 var comando = new MySqlCommand("select * from eventos WHERE (1=1) ", connection);
-                if (id_cliente.Equals("") == false)
+                if (id_cliente != 0)
                 {
                     comando.CommandText += $" and id_cliente LIKE @id_cliente";
                     comando.Parameters.Add(new MySqlParameter("id_cliente", id_cliente));
                 }
 
-                if (id_pacotes.Equals("") == false)
+                if (id_pacotes != 0)
                 {
                     comando.CommandText += $" and id_pacotes LIKE @id_pacotes";
                     comando.Parameters.Add(new MySqlParameter("id_pacotes", id_pacotes));
@@ -95,7 +95,7 @@ namespace BuffetManagement.Negócio
                     evento.Id = reader.GetInt32("id");
                     evento.Valor = reader.GetFloat("valor");
                     evento.Quantidade = reader.GetInt32("quantidade");
-                    evento.Data_evento = reader.GetDateTime("data_vencimento");
+                    evento.Data_evento = reader.GetDateTime("data_evento");
                     evento.Observacao = reader.GetString("observacao");
 
                     packs.Add(evento);

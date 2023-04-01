@@ -22,10 +22,10 @@
                 <p class="lead">Valor:</p>
                 <asp:TextBox runat="server" ID="txtValor" CssClass="form-control" Enabled="false" AutoPostBack="true"></asp:TextBox>
                 <br />
-                <p class="lead">Data Evento:</p>
+                <p class="lead">Data do evento:</p>
                 <asp:TextBox runat="server" ID="txtDataEvento" CssClass="form-control" placeholder="Insira a data do evento"></asp:TextBox>
                 <br />
-                <p class="lead">Obeservação:</p>
+                <p class="lead">Observação:</p>
                 <textarea runat="server" id="txtObservacao" rows="5" cols="50" style="height: 200px; width: 400px;" class="form-control"></textarea><br />
 
                 <style>
@@ -50,6 +50,7 @@
                 </div>
                 <br />
                 <br />
+
                 <div class="row">
                     <asp:GridView runat="server" ID="grdEventos" Width="100%" AutoGenerateColumns="false"
                         CssClass="table table-sm table-bordered table-condensed table-responsive-sm table-hover table-striped"
@@ -59,7 +60,7 @@
                             <asp:BoundField DataField="Pacotes.Nome" HeaderText="PACOTE" />
                             <asp:BoundField DataField="quantidade" HeaderText="QUANTIDADE" />
                             <asp:BoundField DataField="valor" HeaderText="VALOR" />
-                            <asp:BoundField DataField="data_evento" HeaderText="DATA EVENTO" />
+                            <asp:BoundField DataField="data_evento" HeaderText="DATA DO EVENTO" />
                             <asp:BoundField DataField="observacao" HeaderText="OBSERVAÇÃO" />
                             <asp:ButtonField ButtonType="Link" CommandName="editar" ControlStyle-CssClass="btn btn-warning" Text="Editar" />
                             <asp:ButtonField ButtonType="Link" CommandName="excluir" ControlStyle-CssClass="btn btn-danger" Text="Excluir" />

@@ -49,6 +49,24 @@ namespace BuffetManagement.Editar {
         protected global::System.Web.UI.WebControls.TextBox txtValor;
         
         /// <summary>
+        /// Controle txtDataEvento.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDataEvento;
+        
+        /// <summary>
+        /// Controle txtObservacao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtObservacao;
+        
+        /// <summary>
         /// Controle btnEditar.
         /// </summary>
         /// <remarks>
