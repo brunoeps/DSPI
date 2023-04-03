@@ -13,19 +13,22 @@
                         <asp:Label runat="server" ID="lblClientes" Text="0"></asp:Label>
                     </div>
                     <br />
+                    <br />
                     <h4>Total de Pacotes</h4>
                     <div class="progress-bar progress-bar-info" role="progressbar" style="width: 100%">
                         <asp:Label runat="server" ID="lblPacotes" Text="0"></asp:Label>
                     </div>
                     <br />
+                    <br />
+
                     <h4>Selecione a data do(s) lançamento(s)</h4>
                     <div class="progress-bar progress-bar-info" role="progressbar" style="width: 100%">
                     </div>
-
+                  
                     <asp:TextBox TextMode="Date" ID="data" runat="server" OnTextChanged="data_TextChanged" AutoPostBack="true"></asp:TextBox>
-
                     <br />
-                    <asp:Label runat="server" ID="lblFinanceiro" Text="Valor: "></asp:Label>
+                    <br />
+                    <asp:Label runat="server" ID="lblFinanceiro" class="h4" Text="Valor: "></asp:Label>
 
                 </div>
             </div>

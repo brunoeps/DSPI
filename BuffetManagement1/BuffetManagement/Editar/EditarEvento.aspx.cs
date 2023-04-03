@@ -41,9 +41,7 @@ namespace BuffetManagement.Editar
                 connection.Close();
             }
         }
-
-
-
+                  
         protected void ddlPacote_SelectedIndexChanged(object sender, EventArgs e)
         {
             connection.Open();
@@ -69,7 +67,6 @@ namespace BuffetManagement.Editar
                 // Se o valor inserido não for um número inteiro, exibe uma mensagem de erro.
                 Response.Write("<script>alert('Insira somente números inteiros');</script>");
                 txtQuantidade.Text = "";
-
             }
 
             else
@@ -103,6 +100,8 @@ namespace BuffetManagement.Editar
             EditaEvento.Id = Convert.ToInt32(Request.QueryString["Id"].ToString());
             EditaEvento.Quantidade = Convert.ToInt32(txtQuantidade.Text);
             EditaEvento.Valor = float.Parse(txtValor.Text.Replace("R$", "").Replace(" ", ""));
+            EditaEvento.Data_evento = Convert.ToDateTime(txtDataEvento.Text);
+            EditaEvento.Observacao = txtObservacao.Value;
 
             Negócio.Evento AcoesEvento = new Negócio.Evento();
             AcoesEvento.Update(EditaEvento);

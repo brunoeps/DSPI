@@ -55,7 +55,7 @@ namespace BuffetManagement
             if (evento.Count == 0)
             {
                 SiteMaster.ExibirAlert(this, "Evento não encontrado! Verifique os campos cliente e pacote.");
-            }           
+            }
         }
 
         protected void btnCadastraEvento_Click(object sender, EventArgs e)
@@ -89,7 +89,6 @@ namespace BuffetManagement
                 Log.Error("Erro! " + er.Message);
             }
         }
-
 
         protected void grdEventos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -136,7 +135,6 @@ namespace BuffetManagement
                 // Se o valor inserido não for um número inteiro, exibe uma mensagem de erro.
                 Response.Write("<script>alert('Insira somente números inteiros');</script>");
                 txtQuantidade.Text = "";
-
             }
 
             else

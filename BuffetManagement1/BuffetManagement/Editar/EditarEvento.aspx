@@ -17,8 +17,12 @@
                 <p class="lead">Valor:</p>
                 <asp:TextBox runat="server" ID="txtValor" CssClass="form-control" Enabled="false" AutoPostBack="true"></asp:TextBox>
                 <br />
+                <p class="lead">Data do evento:</p>
+                <asp:TextBox runat="server" ID="txtDataEvento" CssClass="form-control" placeholder="Insira a data do evento"></asp:TextBox>
                 <br />
-
+                <p class="lead">Observação:</p>
+                <textarea runat="server" id="txtObservacao" rows="5" cols="50" style="height: 200px; width: 400px;" class="form-control"></textarea><br />
+                
                 <style>
                     .button {
                         background-color: Highlight;
