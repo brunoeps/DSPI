@@ -19,7 +19,7 @@ namespace BuffetManagement.Negócio
         {
             // Configure as credenciais do remetente do e-mail
             string remetente = "0000886005@senaimgaluno.com.br";
-            string destinatario = "09113271@senaimgdocente.com.br";
+            string destinatario = "0000882561@senaimgaluno.com.br";
             string senha = "carol98924899";
 
             var smtpClient = new SmtpClient("smtp.gmail.com");
