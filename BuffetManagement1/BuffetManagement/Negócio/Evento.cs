@@ -61,10 +61,10 @@ namespace BuffetManagement.Negócio
                     comando.Parameters.Add(new MySqlParameter("id", id));
                 }
 
-                if (valor.Equals("R$0,00") == false)
+                if (valor.Equals("R$0,00") == false && valor.Equals("") == false)
                 {
                     comando.CommandText += $" and valor = @valor";
-                    comando.Parameters.Add(new MySqlParameter("valor", valor.Replace("R$","").Replace(" ","").Replace(".","").Replace(",","."));
+                    comando.Parameters.Add(new MySqlParameter("valor", valor.Replace("R$","").Replace(" ","").Replace(".","").Replace(",",".")));
                 }
 
                 if (quantidade > 0)
