@@ -5,9 +5,9 @@
     <div class="jumbotron">
         <div class="row">
             <div class="col-sm-4"></div>
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 <h1>Dashboard</h1>
-                <div class="col-lg-7 text-center">
+                <div class="col-sm-7 text-center">
                     <h4>Total de Clientes</h4>
                     <div class="progress-bar progress-bar-info" role="progressbar" style="width: 100%">
                         <asp:Label runat="server" ID="lblClientes" Text="0"></asp:Label>
@@ -21,10 +21,15 @@
                     <br />
                     <br />
 
-                    <h4>Selecione a data do(s) lançamento(s)</h4>
+                    <h4>Total de Eventos</h4>
                     <div class="progress-bar progress-bar-info" role="progressbar" style="width: 100%">
+                        <asp:Label runat="server" ID="lblEventos" Text="0"></asp:Label>
                     </div>
-                  
+                    <br />
+                    <br />
+
+                    <h4>Data do(s) lançamento(s)</h4>
+                                  
                     <asp:TextBox TextMode="Date" ID="data" runat="server" OnTextChanged="data_TextChanged" AutoPostBack="true"></asp:TextBox>
                     <br />
                     <br />

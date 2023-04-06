@@ -7,7 +7,7 @@
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
                 <h1>Agenda</h1>
-                <p class="lead">Confira os próximos eventos:</p>
+                <p class="lead">Confira todos os eventos:</p>
                 <div class="row">
                     <asp:GridView runat="server" ID="grdEventos" Width="100%"  AutoGenerateColumns="false"
                         CssClass="table table-sm table-bordered table-condensed table-responsive-sm table-hover table-striped"
