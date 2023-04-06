@@ -30,6 +30,13 @@ namespace BuffetManagement
             reader.Read();
             lblPacotes.Text = reader.GetInt16(0).ToString();
             connection.Close();
+
+            connection.Open();
+            command = new MySqlCommand("SELECT COUNT(*) FROM eventos WHERE 1 = 1", connection);
+            reader = command.ExecuteReader();
+            reader.Read();
+            lblEventos.Text = reader.GetInt16(0).ToString();
+            connection.Close();
         }
 
         protected void data_TextChanged(object sender, EventArgs e)
